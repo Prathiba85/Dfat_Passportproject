@@ -4,6 +4,7 @@ import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -77,19 +78,23 @@ public class ElementUtil {
 
 	//wait
 	public WebElement waitForElementPresence(By locator,WebDriver driver, int timeoutInSeconds) {
-		
-		
-		//WebDriverWait wait = new WebDriverWait(driver,timeoutInSeconds)).ignoring(StaleElementReferenceException.class).until(ExpectedConditions.presenceOfElementLocated(locator)).click();
-			
+					
 		
 	  return new WebDriverWait(driver, timeoutInSeconds).ignoring(StaleElementReferenceException.class).until(ExpectedConditions.presenceOfElementLocated(locator));
-		//WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
-		//new WebDriverWait(driver,).ignoring(StaleElementReferenceException.class).until(ExpectedConditions.elementToBeClickable(locator)).click();
-		//return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+		
 	}
-
+	
+	public WebElement waitforElementClickable (By locator,WebDriver driver,int timeoutInSeconds)
+	{
+		return new WebDriverWait(driver, timeoutInSeconds).ignoring(StaleElementReferenceException.class).until(ExpectedConditions.elementToBeClickable(locator));
+	}
+	
 	public void doSendKeysWithWait(By locator, int timeOut, String value) {
-		waitForElementPresence(locator,driver, timeOut).sendKeys(value);
+		waitForElementPresence(locator,driver, timeOut);
+		WebElement element = getElement(locator);
+		element.sendKeys(value);
+		element.sendKeys(Keys.ARROW_DOWN);
+		element.sendKeys(Keys.ENTER);
 		
 	}
 
@@ -122,11 +127,18 @@ public class ElementUtil {
 		jsUtil.scrollIntoView(ele);
 	}
 	
-	public void sendKeysbyJavaScriptExecutor(By locator)
+	public void sendKeysbyJavaScriptExecutor(By locator, String value)
 	{
 		
 		WebElement ele = getElement(locator);
 		jsUtil.scrollIntoView(ele);
+		jsUtil.sendKeys(ele,value);
+	}
+	
+	public void enterData(By locator,WebDriver driver, int timeouts,String value)
+	{
+		waitforElementClickable(locator, driver, 50);
+		doSendKeysWithWait(locator, timeouts, value);
 	}
 	
 	

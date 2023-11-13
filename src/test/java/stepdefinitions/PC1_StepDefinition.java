@@ -73,64 +73,6 @@ public class PC1_StepDefinition {
 
 	}
 
-	/*
-	 * @When("I enter test data as per TestData Spreadsheet") public void
-	 * i_enter_test_data_as_per_TestData_Spreadsheet() {
-	 * opaspd.chooseLodgementLocation(); opaspd.chooseAdultApplicant();
-	 * opaspd.clickNext(); //page-2 opaspd.clickMyself();
-	 * opaspd.enterFamilyName(PC1_TestData.FamilyName);
-	 * opaspd.enterGivenName(PC1_TestData.GivenName);
-	 * opaspd.selectSex(PC1_TestData.Sex); opaspd.enterDOB(PC1_TestData.DOB);
-	 * opaspd.enterCountryOfBirth(PC1_TestData.CountryOfBirth);
-	 * opaspd.enterParentsFamilyName(PC1_TestData.FamilyName);
-	 * opaspd.clickNextPage2(); //Page-3
-	 * opascd.enterResendentialAddress("8 McDonald Street","Chifley","ACT","2606" );
-	 * opascd.chooseNoAlternateDeliveryOption(); opascd.enterMobileNumber(); //Page4
-	 * opaspp.chooseHadAustralianPassport(); //Citizenship details
-	 * opascp.haveAustralianBirthCertificate("No");
-	 * opascp.haveCitizenshipCertificate("Yes"); opascp.chooseCitizenshipType();
-	 * opascp.enterCitizenshipDetails(PC1_TestData.Citizenship_FamilyName,
-	 * PC1_TestData.Citizenship_GivenName,PC1_TestData.Citizenship_DOB,
-	 * PC1_TestData.Citizenship_CertificateNumber, PC1_TestData.DateAquired,
-	 * PC1_TestData.DateIssued);
-	 * opascp.enterSupportingDocumentDetails("Foreign Passport");
-	 * opascp.enterForeignPassportDetails(PC1_TestData.FOREIGNPASSPORT_FAMILYNAME,
-	 * PC1_TestData.FOREIGNPASSPORT_GIVENNAMES,PC1_TestData.FOREIGNPASSPORT_DOB,
-	 * PC1_TestData.FOREIGNPASSPORT_SEX ,
-	 * PC1_TestData.FOREIGNPASSPORT_PLACEOFBIRTH); //Confirm Identity
-	 * opascc.istherenamechange("No");
-	 * 
-	 * //System.out.println(PC1_TestData.FOREIGNPASSPORT_DOB); //Emergency contact
-	 * details //ap.enterEmergencyContactDetails(PC1_TestData.EmergencyFamilyName,
-	 * PC1_TestData.EmergencyGivenName,PC1_TestData.Relationship);
-	 * opascid.clickCategoryAdoc("Proof of age/photcard");
-	 * opascid.clickCategoryBdoc("Credit Card");
-	 * opascid.isaddressresidenceavailable("Yes");
-	 * 
-	 * //Referee details opasrp.enterRefereedetails(); //Emergency contact page
-	 * opadecp.enterEmergencyContactDetails(); //Fees Page
-	 * 
-	 * String actual_fees = opasfp.getfees();
-	 * Assert.assertEquals(actual_fees,"A$325.00");
-	 * 
-	 * }
-	 * 
-	 * @Then("I can successfully lodge PC1 application online.") public void
-	 * i_can_successfully_lodge_PC1_application_online() {
-	 * 
-	 * }
-	 * 
-	 * @Then("I can successfully complete the application") public void
-	 * i_can_successfully_complete_the_application() {
-	 * 
-	 * Map<String, String> map=commonFunction.GetAllData(); String
-	 * xyz=map.get("FAMILYNAME").toString(); // ExtentReportLogger.log(xyz); string
-	 * val=null; if(stringA.startsWith("@")) {
-	 * val=CommonFunctions.getValueFromExcel("stringA"); }else {
-	 * 
-	 * }
-	 * 
-	 * }
-	 */
+	
 
 }

@@ -1,6 +1,7 @@
 package com.qa.util;
 
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -77,6 +78,9 @@ public class JavaScriptUtil {
 	}
 	public void sendKeys(WebElement element, String value) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
+		element.sendKeys(value);
+		element.sendKeys(Keys.ARROW_DOWN);
+		element.sendKeys(Keys.ENTER);
 		
 	}
 

@@ -87,13 +87,19 @@ public class PersonalDetailsPage {
 	
 	public void enterPersonalDetails()
 	{
+		eleUtil.enterData(txt_familyname, driver, 30,exutil.getTestData("FAMILYNAME") );
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
 	
 		//FamilyName
-		eleUtil.waitForElementPresence(txt_familyname, driver, 30);
-		eleUtil.doSendKeysWithWait(txt_familyname, 30, exutil.getTestData("FAMILYNAME"));
-		//SurName
-		eleUtil.waitForElementPresence(txt_givennames, driver, 30);
-		eleUtil.doSendKeysWithWait(txt_givennames, 30, exutil.getTestData("GIVENNAMES"));
+	
+		eleUtil.waitforElementClickable(txt_givennames, driver, 50);
+		eleUtil.doSendKeysWithWait(txt_givennames,30,exutil.getTestData("GIVENNAMES"));
+		eleUtil.sendKeysbyJavaScriptExecutor(txt_givennames,exutil.getTestData("GIVENNAMES"));
 		//Gender
 		String sex = exutil.getTestData("SEX");
 		if(sex.equals("M"))
@@ -108,22 +114,28 @@ public class PersonalDetailsPage {
 		{
 			eleUtil.clickElementbyJavaScriptExecutor(chk_persondetailsIntersex);
 		}
+	
+	
+		
+		//DOB
+		//eleUtil.enterData(txt_DOB, driver, 100,exutil.getTestData("DOB") );
+		//eleUtil.waitforElementClickable(txt_DOB, driver, 30);
+		//eleUtil.scrollToElementbyJavaScriptExecutor(txt_DOB);
+		eleUtil.sendKeysbyJavaScriptExecutor(txt_DOB,exutil.getTestData("DOB"));
 		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e1) {
-			// TODO Auto-generated catch block
+		
 			e1.printStackTrace();
 		}
-		//DOB
-		eleUtil.scrollToElementbyJavaScriptExecutor(txt_DOB);
-		//eleUtil.waitForElementVisible(txt_countryOfBirth, 20);
-		eleUtil.doSendKeysWithWait(txt_DOB,80,exutil.getTestData("DOB"));
+		eleUtil.waitForElementVisible(txt_countryOfBirth, 20);
+		eleUtil.doSendKeysWithWait(txt_DOB,100,exutil.getTestData("DOB"));
 		
 		//Country Of Birth
 		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e1) {
-			// TODO Auto-generated catch block
+		
 			e1.printStackTrace();
 		}
 		eleUtil.scrollToElementbyJavaScriptExecutor(txt_countryOfBirth);
@@ -150,81 +162,6 @@ public class PersonalDetailsPage {
 			e.printStackTrace();
 		}
 	}
-	/*
-	 * 
-	 * public void clickMyself() { try { Thread.sleep(3000); } catch
-	 * (InterruptedException e) { // TODO Auto-generated catch block
-	 * e.printStackTrace(); } chk_myself.click(); }
-	 * 
-	 * public void enterFamilyName(String familyname) { try { Thread.sleep(3000); }
-	 * catch (InterruptedException e) { // TODO Auto-generated catch block
-	 * e.printStackTrace(); }
-	 * 
-	 * CommonFunctions.scrollintoView(txt_familyname, driver);
-	 * CommonFunctions.clickElementByJS(txt_familyname, driver);
-	 * txt_familyname.sendKeys(familyname); txt_familyname.sendKeys(Keys.RETURN);
-	 * 
-	 * 
-	 * }
-	 * 
-	 * public void enterGivenName(String givenname) { try { Thread.sleep(3000); }
-	 * catch (InterruptedException e) { // TODO Auto-generated catch block
-	 * e.printStackTrace(); } CommonFunctions.scrollintoView(txt_givennames,
-	 * driver); CommonFunctions.clickElementByJS(txt_givennames, driver);
-	 * txt_givennames.click(); txt_givennames.sendKeys(givenname);
-	 * txt_givennames.sendKeys(Keys.RETURN);
-	 * 
-	 * }
-	 * 
-	 * public void selectSex(String sex) { //CommonFunctions.scrollToBottom(driver);
-	 * //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5)); try {
-	 * Thread.sleep(3000); } catch (InterruptedException e) { // TODO Auto-generated
-	 * catch block e.printStackTrace(); } if(sex.equals("M")) {
-	 * CommonFunctions.scrollintoView(chk_persondetailsMale, driver);
-	 * CommonFunctions.clickElementByJS(chk_persondetailsMale, driver);
-	 * //chk_persondetailsMale.click(); } if(sex.equals("F")) {
-	 * CommonFunctions.scrollintoView(chk_persondetailsFemale, driver);
-	 * CommonFunctions.clickElementByJS(chk_persondetailsFemale, driver);
-	 * //chk_persondetailsFemale.click(); } if(sex.equals("I")) {
-	 * CommonFunctions.scrollintoView(chk_persondetailsIntersex, driver);
-	 * CommonFunctions.clickElementByJS(chk_persondetailsIntersex, driver);
-	 * //chk_persondetailsIntersex.click(); } }
-	 * 
-	 * public void enterDOB(String DOB) {
-	 * //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5)); try {
-	 * Thread.sleep(3000); } catch (InterruptedException e) { // TODO Auto-generated
-	 * catch block e.printStackTrace(); } CommonFunctions.scrollintoView(txt_DOB,
-	 * driver); CommonFunctions.clickElementByJS(txt_DOB, driver);
-	 * txt_DOB.sendKeys(DOB); txt_DOB.sendKeys(Keys.RETURN); } public void
-	 * enterCountryOfBirth(String country) {
-	 * //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5)); try {
-	 * Thread.sleep(3000); } catch (InterruptedException e) { // TODO Auto-generated
-	 * catch block e.printStackTrace(); } //CommonFunctions.scrollToBottom(driver);
-	 * CommonFunctions.scrollintoView(txt_countryOfBirth, driver);
-	 * CommonFunctions.clickElementByJS(txt_countryOfBirth, driver);
-	 * //txt_countryOfBirth.sendKeys(country);
-	 * 
-	 * txt_countryOfBirth.sendKeys(country);
-	 * txt_countryOfBirth.sendKeys(Keys.RETURN); }
-	 * 
-	 * public void enterParentsFamilyName(String FamilyName) { try {
-	 * Thread.sleep(3000); } catch (InterruptedException e) { // TODO Auto-generated
-	 * catch block e.printStackTrace(); }
-	 * //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-	 * //CommonFunctions.scrollToBottom(driver);
-	 * CommonFunctions.scrollintoView(txt_ParentsFamilyName, driver);
-	 * CommonFunctions.clickElementByJS(txt_ParentsFamilyName, driver);
-	 * //txt_countryOfBirth.sendKeys(country);
-	 * 
-	 * txt_ParentsFamilyName.sendKeys(FamilyName);
-	 * txt_ParentsFamilyName.sendKeys(Keys.RETURN); } public void clickNextPage2() {
-	 * try { Thread.sleep(3000); } catch (InterruptedException e) { // TODO
-	 * Auto-generated catch block e.printStackTrace(); }
-	 * CommonFunctions.scrollintoView( btn_NextPage2, driver);
-	 * CommonFunctions.clickElementByJS( btn_NextPage2, driver);
-	 * 
-	 * 
-	 * }
-	 */
+	
 
 }
