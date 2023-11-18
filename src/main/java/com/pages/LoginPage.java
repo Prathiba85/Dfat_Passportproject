@@ -3,7 +3,6 @@ package com.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-
 import com.qa.factory.DriverFactory;
 import com.qa.util.ElementUtil;
 
@@ -44,8 +43,9 @@ public class LoginPage  {
 	
 	public HomePage clickLogin()
 	{
-		
-		driver.findElement(btn_Submit).click();
+		//eleUtil.waitForElementToBeClickable(btn_Submit).click();
+		eleUtil.clickelement(btn_Submit);
+		//driver.findElement(btn_Submit).click();
 		return new HomePage(driver);
 	}
 	

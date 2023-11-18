@@ -2,146 +2,600 @@ package com.qa.util;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementNotInteractableException;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.UnhandledAlertException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ElementUtil {
 	private WebDriver driver;
 	private Select select;
 	private Actions act;
-	private JavaScriptUtil jsUtil;
-
 
 	public ElementUtil(WebDriver driver) {
 
 		this.driver = driver;
 		act = new Actions(driver);
-		jsUtil = new JavaScriptUtil(driver);
+
 	}
 
+	// ******************TextBox**********************//
+	//
 	public void doSendKeys(By locator, String value) {
-		// TODO Auto-generated method stub
 		WebElement ele = getElement(locator);
-		//ele.clear();
-		ele.sendKeys(value);
+		waitForElementToBeClickable(locator).sendKeys(value);
+
+	}
+
+	// do sendKeys with wait checkstaleElement
+	public void doSendKeysWithWaitCheckStaleElementException(By locator, String value) {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		StaleElementHandleBylocator(locator, value);
+
+		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+
+	}
+
+	// ***************************buttons *****************************//
+
+	public void doClick(By locator) {
+		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+		waitForElementPresence(locator, 20);
+		getElement(locator).click();
+	}
+
+	public void clickelement(By locator) {
+		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+		StaleElementforClickablebutton(locator);
+		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+	}
+
+	// Checkbox
+	// 01
+	public void clickElementbyJavaScriptExecutorCheckStaleElement(By locator) {
+		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+		StaleElementCheckForcheckbox(locator);
+
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+	}
+
+	// Radio Button
+	public void clickradiobutton(By locator) {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		StaleElementCheckForradiobutton(locator);
+
+		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+
+	}
+
+	// scroll
+	public void scrollToElementbyJavaScriptExecutor(By locator) {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		StaleElementCheckForScrollToElement(locator);
+		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+
+	}
+
+//Waits
+
+	// 04
+	public WebElement waitForElementPresence(By locator, int timeoutInSeconds) {
+
+		return new WebDriverWait(driver, timeoutInSeconds).ignoring(StaleElementReferenceException.class)
+				.until(ExpectedConditions.presenceOfElementLocated(locator));
+
+	}
+
+//--------------------------------------------Sub Fuctions Called by Main functions --------------------------//
+
+	public void scrollPageDown() {
+	
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
 		
 	}
-	
+
+	public boolean ischeckselected(By locator) {
+		WebElement element = getElement(locator);
+		element.getAttribute("checked");
+		if ((element.getAttribute("checked").equals("checked"))) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public boolean isRadiobuttonselected(By locator) {
+		WebElement element = getElement(locator);
+
+		if ((element.isSelected())) {
+
+			return true;
+		}
+
+		return false;
+	}
+
 	public WebElement getElement(By locator) {
 		WebElement ele = driver.findElement(locator);
 		return ele;
 	}
 
-	public void doClick(By locator) {
-		waitForElementPresence(locator,driver, 10);
-		getElement(locator).click();
+// Waits
+
+	public void StaleElementforClickablebutton(By locator) {
+		WebElement element;
+		int count = 0;
+		boolean clicked = false;
+		while (count < 10 && !clicked) {
+			try {
+				waitForElementToBeClickable(locator);
+				WebElement ele = getElement(locator);
+				clickElementByJS(ele);
+				clicked = true;
+			} catch (UnhandledAlertException e) {
+				waitForElementToBeClickable(locator);
+				WebElement ele = getElement((locator));
+				clickElementByJS(ele);
+				count = count + 1;
+
+			} catch (Exception e) {
+				waitForElementToBeClickable(locator);
+				WebElement ele = getElement((locator));
+				clickElementByJS(ele);
+				count = count + 1;
+
+			}
+		}
+
 	}
-	
+
+	public WebElement waitForElementToBeClickable(By locator) {
+		return new WebDriverWait(driver, 30).ignoring(StaleElementReferenceException.class)
+				.until(ExpectedConditions.elementToBeClickable(locator));
+	}
+
 	public String doGetText(By locator) {
 		return getElement(locator).getText();
 	}
-	public String doGetTitle(By locator) {
-		  return getElement(locator).getText();
-		
-		
+
+	public void StaleElementHandleBylocator(By locator, String value) {
+		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+		WebElement element;
+		element = getElement(locator);
+		int count = 0;
+		String textentered;
+		// System.out.println("Before after entry "+textentered.isBlank());
+		do {
+			try {
+				waitForElementToBeClickable(locator);
+				element = getElement(locator);
+				element.clear();
+				element.sendKeys(value);
+				element.sendKeys(Keys.ARROW_DOWN);
+				element.sendKeys(Keys.ENTER);
+				driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+				textentered = element.getText();
+
+			} catch (UnhandledAlertException e) {
+				waitForElementToBeClickable(locator);
+				element = getElement(locator);
+				element.clear();
+				element.sendKeys(value);
+				element.sendKeys(Keys.ARROW_DOWN);
+				element.sendKeys(Keys.ENTER);
+				driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+				textentered = element.getText();
+
+			} catch (ElementNotInteractableException e) {
+				waitForElementToBeClickable(locator);
+				element = getElement(locator);
+				element.clear();
+				element.sendKeys(value);
+				element.sendKeys(Keys.ARROW_DOWN);
+				element.sendKeys(Keys.ENTER);
+				driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+				textentered = element.getText();
+
+			} catch (Exception e) {
+				waitForElementToBeClickable(locator);
+				element = getElement(locator);
+				element.clear();
+				element.sendKeys(value);
+				element.sendKeys(Keys.ARROW_DOWN);
+				element.sendKeys(Keys.ENTER);
+				driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+				textentered = element.getText();
+
+			}
+			count = count + 1;
+			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+			//System.out.println("textentered" + textentered);
+			//System.out.println("textentered length " + textentered.trim().isEmpty());
+
+		} while ((count < 15 && ((textentered.trim().isEmpty()) == false)));
+
 	}
+
+	public void StaleElementCheckForradiobutton(By locator) {
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		WebElement element = element = getElement(locator);
+		
+		int count = 0;
+		// String notselected = null ;
+		String selectedvalue = null;
+		// System.out.println("Intial value "+element.getAttribute("checked"));
+		
+		do {
+			try {
+				waitForElementToBeClickable(locator);
+				element = getElement(locator);
+				//System.out.println("Initial Radio button valueat start " + element.getAttribute("checked"));
+				clickElementByJS(element);
+				
+				selectedvalue = element.getAttribute("checked");
+
+				count++;
+			} catch (StaleElementReferenceException e) {
+				waitForElementToBeClickable(locator);
+				element = getElement(locator);
+				clickElementByJS(element);
+				selectedvalue = element.getAttribute("checked");
+				count++;
+			}
+			catch (Exception e) {
+				waitForElementToBeClickable(locator);
+				element = getElement(locator);
+				clickElementByJS(element);
+				selectedvalue = element.getAttribute("checked");
+				count++;
+			}
+			//System.out.println("Final Radio button value " + element.getAttribute("checked"));
+			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+
+		}while(((count < 10) && (selectedvalue.equals(null))));
 	
+
+	}
+
+	public void StaleElementCheckForScrollToElement(By locator) {
+		
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		int count = 0;
+		boolean scrollto = true;
+		boolean clicked = false;
+		while (count < 10 && (clicked == false)) {
+			try {
+				WebElement ele = getElement(locator);
+				waitForElementToBeClickable(locator);
+				scrollIntoView(ele);
+				clicked = true;
+			} catch (Exception e) {
+				WebElement ele = getElement(locator);
+				waitForElementToBeClickable(locator);
+				
+				scrollIntoView(ele);
+				clicked = true;
+
+			}
+			count = count + 1;
+
+			//System.out.println("Value of clicked " + clicked);
+			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+
+		}
+
+	}
+
+	// ********************* Below Functions are not used but can be used if needed
+	// *******************************//////
+
+	public String doGetTitle(By locator) {
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		return getElement(locator).getText();
+
+	}
+
 	public List<WebElement> getElements(By locator) {
 		return driver.findElements(locator);
 	}
-	
-	
 
 	public void doSelectValueFromDropDown(By locator, String value) {
-		List<WebElement> optionsList = getElements(locator);
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		try {
+			waitForElementToBeClickable(locator);
+			List<WebElement> optionsList = getElements(locator);
 
-		System.out.println(optionsList.size());
+			// System.out.println(optionsList.size());
 
-		for (WebElement e : optionsList) {
-			String text = e.getText();
-			System.out.println(text);
-			if (text.equals(value)) {
-				e.click();
-				break;
+			for (WebElement e : optionsList) {
+				String text = e.getText();
+				// System.out.println(text);
+				if (text.equals(value)) {
+					e.click();
+					break;
+				}
+
+			}
+		} catch (Exception e1) {
+			waitForElementToBeClickable(locator);
+			List<WebElement> optionsList = getElements(locator);
+
+			// System.out.println(optionsList.size());
+
+			for (WebElement e : optionsList) {
+				String text = e.getText();
+				// System.out.println(text);
+				if (text.equals(value)) {
+					e.click();
+					break;
+				}
+
+			}
+		}
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+	}
+
+	// wait
+
+	public boolean getText(By locator) {
+		WebElement element = getElement(locator);
+		if (element.getText().equals(null)) {
+			return false;
+		}
+		return true;
+
+	}
+
+	public boolean isAlertpresent() {
+		List<WebElement> requiredfield = driver.findElements(By.xpath("//span[text()=' This is a required field']"));
+		if (requiredfield.size() > 0) {
+			return true;
+		}
+		return false;
+	}
+
+	public void entersendKeys(By locator, String value) {
+		WebElement element = getElement(locator);
+
+		waitForElementToBeClickable(locator);
+		element = getElement(locator);
+		element.clear();
+		element.sendKeys(value);
+		element.sendKeys(Keys.ENTER);
+
+	}
+
+	public void doClickWithWait(By locator) {
+		waitForElementToBeClickable(locator).click();
+	}
+
+	public String getElementTextWithWait(By locator, int timeOut) {
+		return waitForElementPresence(locator, timeOut).getText();
+	}
+
+	public WebElement waitForElementVisible(By locator, int timeOut) {
+		// WebDriverWait wait = new WebDriverWait(driver, timeOut);
+		return new WebDriverWait(driver, timeOut).ignoring(StaleElementReferenceException.class)
+				.until(ExpectedConditions.visibilityOfElementLocated(locator));
+		// return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+	}
+
+	public WebElement waitForElementignorestatleElement(By locator) {
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(60))
+				.pollingEvery(Duration.ofSeconds(5)).ignoring(NoSuchElementException.class);
+		wait.until(ExpectedConditions.elementToBeClickable(locator));
+
+		return getElement(locator);
+	}
+
+	// Click Element by Java script executor
+
+	public void StaleElementCheckForcheckbox(By locator) {
+		WebElement element;
+		// System.out.println("Initial element status"+element.isSelected());
+		// clickElementByJS(element);
+		int count = 0;
+		boolean status = false;
+		// System.out.println("After first click "+(element.isSelected()));
+		// boolean status = element.isSelected();
+
+		while ((count < 10) && ((status == false))) {
+			try {
+				element = getElement(locator);
+				waitForElementToBeClickable(locator);
+				clickElementByJS(element);
+				status = element.isSelected();
+
+			} catch (NoSuchElementException e) {
+				element = getElement(locator);
+				waitForElementToBeClickable(locator);
+				clickElementByJS(element);
+				status = element.isSelected();
+
 			}
 
+			catch (Exception e) {
+				element = getElement(locator);
+				waitForElementToBeClickable(locator);
+				clickElementByJS(element);
+				status = element.isSelected();
+
+			}
+
+			count++;
+			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		}
+
 	}
 
-	//wait
-	public WebElement waitForElementPresence(By locator,WebDriver driver, int timeoutInSeconds) {
-					
-		
-	  return new WebDriverWait(driver, timeoutInSeconds).ignoring(StaleElementReferenceException.class).until(ExpectedConditions.presenceOfElementLocated(locator));
-		
+	public void sendKeysbyJavaScriptExecutor(By locator, String value) {
+
+		WebElement ele = getElement(locator);
+		scrollIntoView(ele);
+
 	}
-	
-	public WebElement waitforElementClickable (By locator,WebDriver driver,int timeoutInSeconds)
-	{
-		return new WebDriverWait(driver, timeoutInSeconds).ignoring(StaleElementReferenceException.class).until(ExpectedConditions.elementToBeClickable(locator));
+
+	public void enterData(By locator, WebDriver driver, int timeouts, String value) {
+		waitForElementToBeClickable(locator);
+		// doSendKeysWithWait(locator, timeouts, value);
 	}
-	
-	public void doSendKeysWithWait(By locator, int timeOut, String value) {
-		waitForElementPresence(locator,driver, timeOut);
+
+	public static void clickByLocator(final By locator, WebDriver webDriver) {
+
+		final long startTime = System.currentTimeMillis();
+		webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(webDriver).withTimeout(90000, TimeUnit.MILLISECONDS)
+				.pollingEvery(5500, TimeUnit.MILLISECONDS);
+		// .ignoring( StaleElementReferenceException.class );
+		wait.until(new ExpectedCondition<Boolean>() {
+			@Override
+			public Boolean apply(WebDriver webDriver) {
+				try {
+					webDriver.findElement(locator).click();
+					return true;
+				} catch (StaleElementReferenceException e) { // try again
+					return false;
+				}
+			}
+		});
+		webDriver.manage().timeouts().implicitlyWait(startTime, TimeUnit.SECONDS);
+		long endTime = System.currentTimeMillis();
+		long totalTime = endTime - startTime;
+		// log("Finished click after waiting for " + totalTime + " milliseconds.");
+	}
+
+	public void doSendKeysWithStaleElement(By locator, String value, WebDriver driver) {
+		waitForElementignorestatleElement(locator);
+		// StaleElementHandleBylocator(locator);
+		// clickByLocator(locator,driver );
 		WebElement element = getElement(locator);
 		element.sendKeys(value);
 		element.sendKeys(Keys.ARROW_DOWN);
 		element.sendKeys(Keys.ENTER);
-		
+
 	}
 
-	public void doClickWithWait(By locator, int timeOut) {
-		waitForElementPresence(locator,driver, timeOut).click();
+	/*
+	 * 
+	 * Javascript Utils
+	 */
+	public void flash(WebElement element) {
+		String bgcolor = element.getCssValue("backgroundColor");
+		for (int i = 0; i < 10; i++) {
+			changeColor("rgb(0,200,0)", element);// 1
+			changeColor(bgcolor, element);// 2
+		}
 	}
 
-	public String getElementTextWithWait(By locator, int timeOut) {
-		return waitForElementPresence(locator,driver, timeOut).getText();
+	private void changeColor(String color, WebElement element) {
+		JavascriptExecutor js = ((JavascriptExecutor) driver);
+		js.executeScript("arguments[0].style.backgroundColor = '" + color + "'", element);
+
 	}
-	public WebElement waitForElementVisible(By locator, int timeOut) {
-		//WebDriverWait wait = new WebDriverWait(driver, timeOut);
-		return new WebDriverWait(driver, timeOut).ignoring(StaleElementReferenceException.class).until(ExpectedConditions.visibilityOfElementLocated(locator));
-		//return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+
+	public String getTitleByJS() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		return js.executeScript("return document.title;").toString();
 	}
-	
-	//Click Element by Java script executor
-	public void clickElementbyJavaScriptExecutor(By locator)
-	{
-		
-		WebElement ele = getElement(locator);
-		jsUtil.scrollIntoView(ele);
-		jsUtil.clickElementByJS(ele);
+
+	public void goBackByJS() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("history.go(-1)");
 	}
-	
-	public void scrollToElementbyJavaScriptExecutor(By locator)
-	{
-		
-		WebElement ele = getElement(locator);
-		jsUtil.scrollIntoView(ele);
+
+	public void goForwardByJS() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("history.go(1)");
 	}
-	
-	public void sendKeysbyJavaScriptExecutor(By locator, String value)
-	{
-		
-		WebElement ele = getElement(locator);
-		jsUtil.scrollIntoView(ele);
-		jsUtil.sendKeys(ele,value);
+
+	public void refreshBrowserByJS() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("history.go(0)");
 	}
-	
-	public void enterData(By locator,WebDriver driver, int timeouts,String value)
-	{
-		waitforElementClickable(locator, driver, 50);
-		doSendKeysWithWait(locator, timeouts, value);
+
+	public void generateAlert(String message) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("alert('" + message + "')");
 	}
-	
-	
-	
-	
+
+	public void generateConfirmPopUp(String message) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("confirm('" + message + "')");
+	}
+
+	public String getPageInnerText() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		return js.executeScript("return document.documentElement.innerText;").toString();
+	}
+
+	public void clickElementByJS(WebElement element) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", element);
+	}
+
+	public void sendKeysUsingWithId(String id, String value) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("document.getElementById('" + id + "').value='" + value + "'");
+		// document.getElementById('input-email').value ='tom@gmail.com'
+	}
+
+	public void sendKeys(WebElement element, String value) {
+//		JavascriptExecutor js = (JavascriptExecutor) driver;
+
+		element.sendKeys(value);
+//		element.sendKeys(Keys.ARROW_DOWN);
+//		element.sendKeys(Keys.ENTER);
+
+	}
+
+	public void scrollPageDown(String height) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollTo(0, '" + height + "')");
+	}
+
+	public void scrollPageUp() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollTo(document.body.scrollHeight, 0)");
+	}
+
+	public void scrollIntoView(WebElement element) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView(true);", element);
+	}
+
+	public void drawBorder(WebElement element) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].style.border='3px solid red'", element);
+	}
+
 }

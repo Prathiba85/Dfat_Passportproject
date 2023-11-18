@@ -52,9 +52,7 @@ public class ExcelUtil {
 	{
 		//src/test/resources/features
 		try {
-			//OPASTestDataInMap = ExcelUtil.getTestDataInMap(
-				//	"C:\\Users\\sanpr\\exlipsefolder2\\DFAT_PassportProject\\src\\main\\java\\testdata\\OPAS_TestData.xlsx",
-				//	"OPAS_SIT");
+			
 			OPASTestDataInMap = ExcelUtil.getTestDataInMap(
 					"src/main/java/testdata/OPAS_TestData.xlsx",
 					"OPAS_SIT");
