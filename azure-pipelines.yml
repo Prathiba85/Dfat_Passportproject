@@ -11,22 +11,22 @@ pool:
 
 steps:
 - task: Maven@3
+  displayName: 'Maven pom.xml'
   inputs:
-    mavenPomFile: 'pom.xml'
-    mavenOptions: '-Xmx3072m'
-    javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '1.11'
-    jdkArchitectureOption: 'x64'
-    publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'clean install'
+    mavenPomFile: '$(Parameters.mavenPOMFile)'
+    goals: test
+
 - task: CopyFiles@2
+  displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
   inputs:
-    Contents: '**/.war'
+    SourceFolder: '$(system.defaultworkingdirectory)'
+    Contents: '**/*.jar'
     TargetFolder: '$(build.artifactstagingdirectory)'
-- task: PublishCucumberReport@1
+  condition: succeededOrFailed()
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: drop'
   inputs:
-    jsonDir: '$(System.DefaultWorkingDirectory)'
-    outputPath: '$(System.DefaultWorkingDirectory)'
-    theme: 'bootstrap'
-    reportSuiteAsScenarios: true
+    PathtoPublish: '$(build.artifactstagingdirectory)'
+  condition: succeededOrFailed()
+
