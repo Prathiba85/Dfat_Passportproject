@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: testrunners.TestRunner
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 69.625 s <<< FAILURE! - in testrunners.TestRunner
-testrunners.TestRunner.null on testrunners.TestRunner  Time elapsed: 69.535 s  <<< FAILURE!
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 70.139 s <<< FAILURE! - in testrunners.TestRunner
+testrunners.TestRunner.null on testrunners.TestRunner  Time elapsed: 70.038 s  <<< FAILURE!
 java.lang.RuntimeException: java.net.ConnectException: Connection timed out: connect
 	at io.cucumber.core.plugin.MessageFormatter.writeMessage(MessageFormatter.java:36)
 	at io.cucumber.core.eventbus.AbstractEventPublisher.send(AbstractEventPublisher.java:51)

@@ -37,7 +37,7 @@ public class FeesPage  {
 		eleUtil.clickelement(txt_fees);
 		String passport_fees =  eleUtil.doGetText(txt_fees);
 		eleUtil.clickelement(btn_NextPage);
-		
+		System.out.println("**********************************Applicant Surname *********************"+"Tobby");
 		return passport_fees;
 	}
 

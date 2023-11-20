@@ -46,10 +46,10 @@ public class Hooks {
 		//System.out.println("Scenario status ======>"+scenario.getSteps());
 		// byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
        // scenario.attach(screenshot, "image/png",scenario.getName());  
-		String screenshotName = scenario.getName().replaceAll("", "_");
-		byte[] sourcepath=((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-		scenario.attach(sourcepath, "image/png", screenshotName);        
-		//driver.quit();
+		//String screenshotName = scenario.getName().replaceAll("", "_");
+		//byte[] sourcepath=((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+		//scenario.attach(sourcepath, "image/png", screenshotName);        
+		driver.quit();
 		
 	}
 	@After(order =1)
@@ -57,9 +57,9 @@ public class Hooks {
 	{
 		if(scenario.isFailed())
 		{
-			String screenshotName = scenario.getName().replaceAll("", "_");
-			byte[] sourcepath=((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-			scenario.attach(sourcepath, "image/png", screenshotName);
+			//String screenshotName = scenario.getName().replaceAll("", "_");
+			//byte[] sourcepath=((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+			//scenario.attach(sourcepath, "image/png", screenshotName);
 		}
 	}
 	

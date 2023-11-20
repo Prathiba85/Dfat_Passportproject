@@ -76,7 +76,14 @@ public class ElementUtil {
 	}
 
 	public void clickelementtoValidate(By locator,By locator2) {
-	
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
 		StaleElementforvalidatebutton(locator,locator2);
 		try {
 			Thread.sleep(1000);
