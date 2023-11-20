@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">Passport Regression Test Report</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Nov. 18, 2023 04:45:24 pm</span></a>
+<a href="#"><span class="badge badge-primary">Nov. 20, 2023 02:31:47 pm</span></a>
 </li>
 </ul>
 </div>
@@ -71,13 +71,13 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Nov. 18, 2023 04:45:24 pm</h3>
+<h3>Nov. 20, 2023 02:31:47 pm</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Nov. 18, 2023 04:45:35 pm</h3>
+<h3>Nov. 20, 2023 02:32:33 pm</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -148,10 +148,10 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='26%'><b>5</b> steps passed</small></div>
+<div><small data-tooltip='10%'><b>2</b> steps passed</small></div>
 <div>
 <small data-tooltip='5%'><b>1</b> steps failed,
-<b>13</b> skipped, <b data-tooltip='%'>0</b> others
+<b>17</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
 </div>
@@ -167,7 +167,7 @@
 </div></div>
 <script>
 var timeline = {
-"This feature will allow you to create checklist for PC1 applicaiton.":10.112
+"This feature will allow you to create checklist for PC1 applicaiton.":45.606
 };
 </script>
 <div class="row">
@@ -238,10 +238,10 @@ warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 5,
+passGrandChild: 2,
 failGrandChild: 1,
 warningGrandChild: 0,
-skipGrandChild: 13,
+skipGrandChild: 17,
 infoGrandChild: 0,
 eventsCount: 5,
 };
@@ -276,7 +276,7 @@ eventsCount: 5,
           <div class="test-detail">
             <p class="name">This feature will allow you to create checklist for PC1 applicaiton.</p>
             <p class="text-sm">
-              <span>16:45:25 pm</span> / <span>00:00:10:112</span>
+              <span>14:31:47 pm</span> / <span>00:00:45:606</span>
               <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
@@ -285,9 +285,9 @@ eventsCount: 5,
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-fail">This feature will allow you to create checklist for PC1 applicaiton.</h5>
-<span class='badge badge-success'>11.18.2023 16:45:25</span>
-<span class='badge badge-danger'>11.18.2023 16:45:35</span>
-<span class='badge badge-default'>00:00:10:112</span>
+<span class='badge badge-success'>11.20.2023 14:31:47</span>
+<span class='badge badge-danger'>11.20.2023 14:32:33</span>
+<span class='badge badge-default'>00:00:45:606</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 </div>
 <div class="m-t-10 m-l-5"></div>
@@ -305,37 +305,16 @@ eventsCount: 5,
     </div>
         <div class="">
           <div class="card-body">
-              <div class="step pass-bg" title="stepdefinitions.PC1_StepDefinition.i_enter_valid_username_as_and_password_as(java.lang.String,java.lang.String)">
+              <div class="step fail-bg" title="stepdefinitions.PC1_StepDefinition.i_enter_valid_username_as_and_password_as(java.lang.String,java.lang.String)">
                 <span>Given I enter valid username as "sanprathi@gmail.com" and password as "Vimalprabhu-202310"</span>
       <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepdefinitions.PC1_StepDefinition.i_click_login()">
-                <span>When I click login</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepdefinitions.PC1_StepDefinition.user_is_logged_in_Successfully()">
-                <span>Then user is logged in Successfully</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepdefinitions.PC1_StepDefinition.i_click_Start_renewal_passport()">
-                <span>Given I click Start renewal/passport</span>
-      <div>
-      </div>
-              </div>
-              <div class="step fail-bg" title="stepdefinitions.PC1_StepDefinition.i_read_test_data_for_testcase_for_pc1()">
-                <span>And I read test data for testcase for PC1</span>
-      <div>
-        <textarea disabled class="code-block">org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found
-  (Session info: MicrosoftEdge=119.0.2151.58)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
+        <textarea disabled class="code-block">org.openqa.selenium.WebDriverException: unknown error: net::ERR_CONNECTION_TIMED_OUT
+  (Session info: MicrosoftEdge=119.0.2151.72)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-UNVGE05', ip: '192.168.1.9', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.16'
+System info: host: 'DESKTOP-UNVGE05', ip: '192.168.6.51', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.16'
 Driver info: org.openqa.selenium.edge.EdgeDriver
-Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 119.0.2151.58, fedcm:accounts: true, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:63042}, msedge: {msedgedriverVersion: 119.0.2151.72 (e8225cce8e47..., userDataDir: C:\Users\sanpr\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 5459817bb522ab93dcf12f8bb35e2e9d
+Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 119.0.2151.72, fedcm:accounts: true, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:55203}, msedge: {msedgedriverVersion: 119.0.2151.72 (e8225cce8e47..., userDataDir: C:\Users\sanpr\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 2497d017b0cf2b2c0ea04ca08d9dddd4
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -346,15 +325,32 @@ Session ID: 5459817bb522ab93dcf12f8bb35e2e9d
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-	at org.openqa.selenium.remote.RemoteWebElement.getAttribute(RemoteWebElement.java:134)
-	at com.qa.util.ElementUtil.StaleElementCheckForradiobutton(ElementUtil.java:282)
-	at com.qa.util.ElementUtil.clickradiobutton(ElementUtil.java:90)
-	at com.pages.PersonalDetailsPage.chooseLodgementLocation(PersonalDetailsPage.java:62)
-	at stepdefinitions.PC1_StepDefinition.i_read_test_data_for_testcase_for_pc1(PC1_StepDefinition.java:59)
-	at ?.I read test data for testcase for PC1(file:///C:/Users/sanpr/exlipsefolder2/DFAT_PassportProject/src/test/resources/features/PC1Form.feature:10)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:277)
+	at com.pages.LoginPage.launchApplicaiton(LoginPage.java:29)
+	at stepdefinitions.PC1_StepDefinition.i_enter_valid_username_as_and_password_as(PC1_StepDefinition.java:41)
+	at ?.I enter valid username as "sanprathi@gmail.com" and password as "Vimalprabhu-202310"(file:///C:/Users/sanpr/exlipsefolder2/DFAT_PassportProject/src/test/resources/features/PC1Form.feature:3)
 </textarea>
       
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.PC1_StepDefinition.i_click_login()">
+                <span>When I click login</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.PC1_StepDefinition.user_is_logged_in_Successfully()">
+                <span>Then user is logged in Successfully</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.PC1_StepDefinition.i_click_Start_renewal_passport()">
+                <span>Given I click Start renewal/passport</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.PC1_StepDefinition.i_read_test_data_for_testcase_for_pc1()">
+                <span>And I read test data for testcase for PC1</span>
+      <div>Step skipped
       </div>
               </div>
               <div class="step skip-bg" title="stepdefinitions.PC1_StepDefinition.i_select_that_i_am_completing_the_application_for(java.lang.String)">
@@ -433,6 +429,17 @@ Session ID: 5459817bb522ab93dcf12f8bb35e2e9d
       <div>
       </div>
               </div>
+              <div class="step pass-bg" title="AFTER">
+                <span>AppHooks.Hooks.teardownandScreenshot(io.cucumber.java.Scenario)</span>
+      <div>_S_u_c_c_e_s_s_f_u_l_ _L_o_g_i_n_ _w_i_t_h_ _V_a_l_i_d_ _C_r_e_d_e_n_t_i_a_l_s_
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../screenshots/embedded2.png' src="../screenshots/embedded2.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
           </div>
         </div>
   </div>
@@ -480,7 +487,7 @@ Session ID: 5459817bb522ab93dcf12f8bb35e2e9d
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>16:45:25 pm</td>
+<td>14:31:47 pm</td>
 <td>
 <a href="#" class="linked" test-id='1' id='2'>Successful Login with Valid Credentials</a>
 <div class="">
@@ -513,12 +520,12 @@ Session ID: 5459817bb522ab93dcf12f8bb35e2e9d
 <span class="meta">
 <span class='badge log badge-danger'>1</span>
 </span>
-<p class="name">org.openqa.selenium.StaleElementReferenceException</p>
+<p class="name">org.openqa.selenium.WebDriverException</p>
 <p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>org.openqa.selenium.StaleElementReferenceException</h4>
+<h4>org.openqa.selenium.WebDriverException</h4>
 <span status="fail" class='badge log badge-danger'>1 failed</span>
 </div>
 <table class='table table-sm mt-4'>
@@ -532,11 +539,11 @@ Session ID: 5459817bb522ab93dcf12f8bb35e2e9d
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>16:45:33 pm</td>
+<td>14:31:51 pm</td>
 <td>
-<a href="#" class="linked" test-id='1' id='9'>And I read test data for testcase for PC1</a>
+<a href="#" class="linked" test-id='1' id='5'>Given I enter valid username as "sanprathi@gmail.com" and password as "Vimalprabhu-202310"</a>
 <div class="">
-<span class="badge badge-default">This feature will allow you to create checklist for PC1 applicaiton..Successful Login with Valid Credentials.And I read test data for testcase for PC1</span>
+<span class="badge badge-default">This feature will allow you to create checklist for PC1 applicaiton..Successful Login with Valid Credentials.Given I enter valid username as "sanprathi@gmail.com" and password as "Vimalprabhu-202310"</span>
 </div>
 </td>
 </tr>

@@ -49,7 +49,7 @@ public class Hooks {
 		String screenshotName = scenario.getName().replaceAll("", "_");
 		byte[] sourcepath=((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
 		scenario.attach(sourcepath, "image/png", screenshotName);        
-		driver.quit();
+		//driver.quit();
 		
 	}
 	@After(order =1)

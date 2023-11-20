@@ -6,11 +6,16 @@ import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
 import com.pages.ConfirmingCitizenshipPage;
+import com.pages.ConfirmingIdentityPage;
+import com.pages.ConfirmingNameChangePage;
 import com.pages.ContactDetailsPage;
+import com.pages.EmergencyContactPage;
+import com.pages.FeesPage;
 import com.pages.HomePage;
 import com.pages.LoginPage;
 import com.pages.PersonalDetailsPage;
 import com.pages.PreviousPassportPage;
+import com.pages.RefereePage;
 import com.qa.factory.DriverFactory;
 
 import io.cucumber.java.en.Given;
@@ -25,6 +30,11 @@ public class PC1_StepDefinition {
 	ContactDetailsPage contactdetailspage;
 	PreviousPassportPage previouspassportpage;
 	ConfirmingCitizenshipPage  citizenshippage;
+	ConfirmingNameChangePage confirmingnamepage;
+	ConfirmingIdentityPage confirmingidentitypage;
+	RefereePage refereepage;
+	EmergencyContactPage emergencycontactpage;
+	FeesPage feepage ;
 
 	@Given("I enter valid username as {string} and password as {string}")
 	public void i_enter_valid_username_as_and_password_as(String email, String password) {
@@ -92,33 +102,48 @@ public class PC1_StepDefinition {
 
 	@When("I choose Do you have an Austraial Citizenship Certificate as {string}")
 	public void i_choose_do_you_have_an_austraial_citizenship_certificate_as(String string) {
-		citizenshippage.haveAustralianBirthCertificate("Yes");
+		citizenshippage.haveAustralianBirthCertificate("No");
+		citizenshippage.haveCitizenshipCertificate("Yes");
+		citizenshippage.chooseCitizenshipType();
 	 
 	}
 
 	@When("I enter Citizenshipdetails")
 	public void i_enter_citizenshipdetails() {
-	  
+		citizenshippage.enterCitizenshipDetails();
+		citizenshippage.enterSupportingDocumentDetails("Foreign Passport");
+		citizenshippage.enterForeignPassportDetails();
+		confirmingnamepage = new ConfirmingNameChangePage(DriverFactory.getDriver());
+		confirmingnamepage.istherenamechange("No");
 	}
 
 	@When("I confirm Identity")
 	public void i_confirm_identity() {
-	   
+		 confirmingidentitypage = new ConfirmingIdentityPage(DriverFactory.getDriver());
+		 confirmingidentitypage.clickCategoryAdoc("Proof of age/photcard");
+		 confirmingidentitypage.clickCategoryBdoc("Credit Card");
+		 confirmingidentitypage.isaddressresidenceavailable("Yes");
 	}
 
 	@When("I confirm Referee details")
 	public void i_confirm_referee_details() {
+		refereepage= new RefereePage(DriverFactory.getDriver());
+		refereepage.enterRefereedetails();
 	   
 	}
 
 	@When("I enter Emergency contact details")
 	public void i_enter_emergency_contact_details() {
-	   
+		 emergencycontactpage = new EmergencyContactPage(DriverFactory.getDriver());
+		 emergencycontactpage.enterEmergencyContactDetails();
+	
 	}
 
 	@When("I confirm Passport fees")
 	public void i_confirm_passport_fees() {
-	   
+		FeesPage feepage = new FeesPage(DriverFactory.getDriver());
+		
+		String actualfees= feepage.getfees();
 	}
 
 	@When("I review application and click Next")
