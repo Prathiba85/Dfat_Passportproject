@@ -6,7 +6,8 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		//features = {"src/test/resources/features/PC1Form.feature"},
-				features =	{"src/test/resources/features"},
+				//features =	{"src/test/resources/features"},
+						features= {"target/test-classes/features"},
 		glue = {"stepdefinitions","AppHooks"},
 		plugin = {"pretty",
 				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
