@@ -96,11 +96,11 @@ public class ConfirmingCitizenshipPage {
 	public void enterCitizenshipDetails() {
 
 		eleUtil.doSendKeysWithWaitCheckStaleElementException(txt_CitizenshipFamilyName,
-				exutil.getTestData("CITIZENSHIP_FAMILYNAME"));
+				exutil.getTestData("FAMILYNAME"));
 		eleUtil.doSendKeysWithWaitCheckStaleElementException(txt_CitizenshipGivenName,
-				exutil.getTestData("CITIZENSHIP_GIVENNAME"));
+				exutil.getTestData("GIVENNAMES"));
 		eleUtil.doSendKeysWithWaitCheckStaleElementException(txt_CitizenshipDOB,
-				exutil.getTestData("Citizenship_DATEOFBIRTH"));
+				exutil.getTestData("DOB"));
 		eleUtil.doSendKeysWithWaitCheckStaleElementException(txt_CitizenshipNumber,
 				exutil.getTestData("CERTIFICATENUMBER"));
 		eleUtil.doSendKeysWithWaitCheckStaleElementException(txt_CitizenshipAquiredDate,
@@ -127,18 +127,18 @@ public class ConfirmingCitizenshipPage {
 
 	public void enterForeignPassportDetails()
 	{
-		eleUtil.doSendKeysWithWaitCheckStaleElementException(txt_FPFamilyName,exutil.getTestData("FOREIGNPASSPORT_FAMILYNAME"));
-		eleUtil.doSendKeysWithWaitCheckStaleElementException(txt_FPGivenNames,exutil.getTestData("FOREIGNPASSPORT_GIVENNAMES"));
-		eleUtil.doSendKeysWithWaitCheckStaleElementException(txt_FPDOB,exutil.getTestData("FOREIGNPASSPORT_DOB"));
+		eleUtil.doSendKeysWithWaitCheckStaleElementException(txt_FPFamilyName,exutil.getTestData("FAMILYNAME"));
+		eleUtil.doSendKeysWithWaitCheckStaleElementException(txt_FPGivenNames,exutil.getTestData("GIVENNAMES"));
+		eleUtil.doSendKeysWithWaitCheckStaleElementException(txt_FPDOB,exutil.getTestData("DOB"));
 		
-		String sex = exutil.getTestData("FOREIGNPASSPORT_SEX");
+		String sex = exutil.getTestData("SEX");
 		
-		if(sex.equals("Male"))
+		if(sex.equals("M"))
 		{
 			eleUtil.clickradiobutton(rdn_Male);
 			
 		}
-		if(sex.equals("Female"))
+		if(sex.equals("F"))
 		{
 			eleUtil.clickradiobutton(rdn_Female);
 			
@@ -150,7 +150,7 @@ public class ConfirmingCitizenshipPage {
 		}
 		
 		eleUtil.scrollToElementbyJavaScriptExecutor(txt_PlaceOfBirth);
-		eleUtil.doSendKeysWithWaitCheckStaleElementException(txt_PlaceOfBirth,exutil.getTestData("FOREIGNPASSPORT_PLACEOFBIRTH"));
+		eleUtil.doSendKeysWithWaitCheckStaleElementException(txt_PlaceOfBirth,exutil.getTestData("POB"));
 		
 	
 		eleUtil.clickelement(btn_NextPage);

@@ -83,10 +83,22 @@ public class PersonalDetailsPage {
 			//eleUtil.clickradiobutton(rdn_myself);
 		}
 	}
+public void setTestData(String ApplicationType) {
+	if(ApplicationType.equals("PC1_CitizenshipCertificate"))
+	{
+		String Sheetname = "PC1_CitizenshipCertificate";
+		exutil.setTestDataSheet(Sheetname);
+		
+	}
+		
+		
+	}
 
 	public ContactDetailsPage enterPersonalDetails() {
+	
 		
 		eleUtil.doSendKeysWithWaitCheckStaleElementException(txt_familyname, exutil.getTestData("FAMILYNAME"));
+		
 		
 		eleUtil.doSendKeysWithWaitCheckStaleElementException(txt_givennames, exutil.getTestData("GIVENNAMES"));
 		
@@ -113,5 +125,7 @@ public class PersonalDetailsPage {
 		 return new ContactDetailsPage(driver);
 
 		}
+
+	
 
 }

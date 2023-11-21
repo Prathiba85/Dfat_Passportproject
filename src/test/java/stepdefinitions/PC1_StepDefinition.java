@@ -65,7 +65,16 @@ public class PC1_StepDefinition {
 
 	@Given("I read test data for testcase for PC1")
 	public void i_read_test_data_for_testcase_for_pc1() {
+		//personalpage = new PersonalDetailsPage(DriverFactory.getDriver());
+		//personalpage.chooseLodgementLocation();
+		//personalpage.chooseAdultApplicant();
+		//personalpage.clickNext();
+	}
+	
+	@Given("I read test data for testcase for {string}")
+	public void i_read_test_data_for_testcase_for(String ApplicationType) {
 		personalpage = new PersonalDetailsPage(DriverFactory.getDriver());
+		personalpage.setTestData(ApplicationType);
 		personalpage.chooseLodgementLocation();
 		personalpage.chooseAdultApplicant();
 		personalpage.clickNext();

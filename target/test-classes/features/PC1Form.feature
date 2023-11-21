@@ -7,7 +7,7 @@ Then user is logged in Successfully
 @tag1
 Scenario: Successful Login with Valid Credentials
 Given I click Start renewal/passport
-And I read test data for testcase for PC1
+And I read test data for testcase for "PC1_CitizenshipCertificate"
 When I select that I am completing the application for "Myself" 
 And I enter personal details 
 And I enter contact details 

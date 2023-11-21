@@ -40,7 +40,7 @@ public class FeesPage  {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		eleUtil.clickelement(txt_fees);
+		//eleUtil.clickelement(txt_fees);
 		String passport_fees =  eleUtil.doGetText(txt_fees);
 		eleUtil.clickelement(btn_NextPage);
 		System.out.println("**********************************Applicant Surname *********************"+"Tobby");

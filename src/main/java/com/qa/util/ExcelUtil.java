@@ -13,12 +13,19 @@ import com.codoid.products.fillo.Recordset;
 
 public class ExcelUtil {
 	private static Map<String,String> OPASTestDataInMap = new TreeMap<String,String>();
-	public static Map<String,String> getTestDataInMap(String testDataFile,String sheetname) throws Exception 
+	public static String Sheetname;
+	public void setTestDataSheet(String sheetname)
 	{
-		//Map<String,String> OPASTestDataInMap = new TreeMap<String,String>();
+		Sheetname = sheetname;
+	}
+	
+	public static Map<String,String> getTestDataInMap(String testDataFile, String sheetname) throws Exception 
+	{
+
 		String query = null;
-		//query = String.format("SELECT * FROM %s WHERE USED_STATUS='NO'",sheetname);
-		query = String.format("SELECT * FROM %s WHERE USED_STATUS='NO'",sheetname);
+		
+	
+		query = String.format("SELECT * FROM %s WHERE USED_STATUS='NO'",Sheetname);
 		Fillo fillo=new Fillo();
 		Connection conn =null;
 		Recordset recordset = null;
@@ -54,8 +61,7 @@ public class ExcelUtil {
 		try {
 			
 			OPASTestDataInMap = ExcelUtil.getTestDataInMap(
-					"src/main/java/testdata/OPAS_TestData.xlsx",
-					"OPAS_SIT");
+					"src/main/java/testdata/OPAS_TestData.xlsx",Sheetname);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

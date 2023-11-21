@@ -32,9 +32,9 @@ public class ElementUtil {
 		act = new Actions(driver);
 
 	}
-
-	// ******************TextBox**********************//
-	//
+	//*******************************Main Functions called in test Steps***********************************//
+	// ******************TextBox*******************************//
+	
 	public void doSendKeys(By locator, String value) {
 		WebElement ele = getElement(locator);
 		waitForElementToBeClickable(locator).sendKeys(value);
@@ -72,33 +72,29 @@ public class ElementUtil {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 	}
 
-	public void clickelementtoValidate(By locator,By locator2) {
+	public void clickelementtoValidate(By locator, By locator2) {
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
-		StaleElementforvalidatebutton(locator,locator2);
+
+		StaleElementforvalidatebutton(locator, locator2);
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
-		
+
 	}
 
-	
 	// Checkbox
-	// 01
+	
 	public void clickElementbyJavaScriptExecutorCheckStaleElement(By locator) {
 		try {
 			Thread.sleep(1000);
@@ -133,7 +129,8 @@ public class ElementUtil {
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}		StaleElementCheckForScrollToElement(locator);
+		}
+		StaleElementCheckForScrollToElement(locator);
 		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 
 	}
@@ -151,10 +148,10 @@ public class ElementUtil {
 //--------------------------------------------Sub Fuctions Called by Main functions --------------------------//
 
 	public void scrollPageDown() {
-	
+
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-		
+
 	}
 
 	public boolean ischeckselected(By locator) {
@@ -213,71 +210,18 @@ public class ElementUtil {
 	}
 
 	public void StaleElementforvalidatebutton(By locator, By locator2) {
-		
+
 		String ValidationText;
 		waitForElementToBeClickable(locator);
 		WebElement ele = getElement(locator);
 		ValidationText = ele.getText();
-		System.out.println("Validation Text  Before Click "+ValidationText);
+	//	System.out.println("Validation Text  Before Click " + ValidationText);
 		clickElementByJSlocator(locator);
-		
-		
-		System.out.println("Validation Text After  "+ValidationText);
-		
-		
-		/*
-		waitForElementToBeClickable(locator);
-		WebElement ele = getElement(locator);
-		clickelement(locator);
-		String ValidationText = ele.getText();
-		System.out.println(ValidationText);*/
-		
-		
-	
-		/*
-		int count = 0;
-		String Verification=null;
-		String ValidationText=null;
-		do{
-			
-			try {
-				waitForElementToBeClickable(locator);
-				WebElement ele = getElement(locator);
-				ValidationText = ele.getText();
-				System.out.println("Validation Text  Before Click "+ValidationText);
-				clickelement(locator);
-				ValidationText = ele.getText();
-				count=count+1;
-				System.out.println("Validation Text After  "+ValidationText);
-				WebElement verifyelement = getElement(locator2);
-				Thread.sleep(1000);
-				Verification = verifyelement.getText();
-				
-			} 
-			
-			catch (UnhandledAlertException e) {
-				waitForElementToBeClickable(locator);
-				WebElement ele = getElement(locator);
-				clickelement(locator);
-				ValidationText = ele.getText();
-				count = count + 1;
 
-			} catch (Exception e) {
-				waitForElementToBeClickable(locator);
-				WebElement ele = getElement(locator);
-				clickelement(locator);
-				ValidationText = ele.getText();
-				
-				count = count + 1;
+		//System.out.println("Validation Text After  " + ValidationText);
 
 			}
-			
-			
-		}while (count < 10 && (ValidationText.equals("Validate")));*/
 
-	}
-
-	
 	public WebElement waitForElementToBeClickable(By locator) {
 		return new WebDriverWait(driver, 30).ignoring(StaleElementReferenceException.class)
 				.until(ExpectedConditions.elementToBeClickable(locator));
@@ -325,7 +269,7 @@ public class ElementUtil {
 				driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 				textentered = element.getText();
 
-			}catch (NoSuchElementException e) {
+			} catch (NoSuchElementException e) {
 				waitForElementToBeClickable(locator);
 				element = getElement(locator);
 				element.clear();
@@ -335,8 +279,7 @@ public class ElementUtil {
 				driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 				textentered = element.getText();
 
-			} 
-			catch (Exception e) {
+			} catch (Exception e) {
 				waitForElementToBeClickable(locator);
 				element = getElement(locator);
 				element.clear();
@@ -349,29 +292,30 @@ public class ElementUtil {
 			}
 			count = count + 1;
 			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-			//System.out.println("textentered" + textentered);
-			//System.out.println("textentered length " + textentered.trim().isEmpty());
+			// System.out.println("textentered" + textentered);
+			// System.out.println("textentered length " + textentered.trim().isEmpty());
 
 		} while ((count < 15 && ((textentered.trim().isEmpty()) == false)));
 
 	}
 
 	public void StaleElementCheckForradiobutton(By locator) {
-		
+
 		WebElement element = element = getElement(locator);
-		
+
 		int count = 0;
 		// String notselected = null ;
 		String selectedvalue = "null";
 		// System.out.println("Intial value "+element.getAttribute("checked"));
-		
+
 		do {
 			try {
 				waitForElementToBeClickable(locator);
 				element = getElement(locator);
-				//System.out.println("Initial Radio button valueat start " + element.getAttribute("checked"));
+				// System.out.println("Initial Radio button valueat start " +
+				// element.getAttribute("checked"));
 				clickElementByJS(element);
-				
+
 				selectedvalue = element.getAttribute("checked");
 
 				count++;
@@ -381,31 +325,30 @@ public class ElementUtil {
 				clickElementByJS(element);
 				selectedvalue = element.getAttribute("checked");
 				count++;
-			}catch (UnhandledAlertException e) {
+			} catch (UnhandledAlertException e) {
+				waitForElementToBeClickable(locator);
+				element = getElement(locator);
+				clickElementByJS(element);
+				selectedvalue = element.getAttribute("checked");
+				count++;
+			} catch (Exception e) {
 				waitForElementToBeClickable(locator);
 				element = getElement(locator);
 				clickElementByJS(element);
 				selectedvalue = element.getAttribute("checked");
 				count++;
 			}
-			catch (Exception e) {
-				waitForElementToBeClickable(locator);
-				element = getElement(locator);
-				clickElementByJS(element);
-				selectedvalue = element.getAttribute("checked");
-				count++;
-			}
-			
-			//System.out.println("Final Radio button value " + element.getAttribute("checked"));
+
+			// System.out.println("Final Radio button value " +
+			// element.getAttribute("checked"));
 			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 
-		}while(((count < 10) && (selectedvalue.equals(null))));
-	
+		} while (((count < 10) && (selectedvalue.equals(null))));
 
 	}
 
 	public void StaleElementCheckForScrollToElement(By locator) {
-		
+
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		int count = 0;
 		boolean scrollto = true;
@@ -419,14 +362,14 @@ public class ElementUtil {
 			} catch (Exception e) {
 				WebElement ele = getElement(locator);
 				waitForElementToBeClickable(locator);
-				
+
 				scrollIntoView(ele);
 				clicked = true;
 
 			}
 			count = count + 1;
 
-			//System.out.println("Value of clicked " + clicked);
+			// System.out.println("Value of clicked " + clicked);
 			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 
 		}
@@ -453,7 +396,7 @@ public class ElementUtil {
 			waitForElementToBeClickable(locator);
 			List<WebElement> optionsList = getElements(locator);
 
-			System.out.println(optionsList.size());
+			//System.out.println(optionsList.size());
 
 			for (WebElement e : optionsList) {
 				String text = e.getText();
@@ -468,11 +411,11 @@ public class ElementUtil {
 			waitForElementToBeClickable(locator);
 			List<WebElement> optionsList = getElements(locator);
 
-			//System.out.println(optionsList.size());
+			// System.out.println(optionsList.size());
 
 			for (WebElement e : optionsList) {
 				String text = e.getText();
-				//System.out.println(text);
+				// System.out.println(text);
 				if (text.equals(value)) {
 					e.click();
 					break;
@@ -540,12 +483,10 @@ public class ElementUtil {
 
 	public void StaleElementCheckForcheckbox(By locator) {
 		WebElement element;
-		// System.out.println("Initial element status"+element.isSelected());
-		// clickElementByJS(element);
+		
 		int count = 0;
 		boolean status = false;
-		// System.out.println("After first click "+(element.isSelected()));
-		// boolean status = element.isSelected();
+	
 
 		while ((count < 10) && ((status == false))) {
 			try {
@@ -560,7 +501,7 @@ public class ElementUtil {
 				clickElementByJS(element);
 				status = element.isSelected();
 
-			}catch (UnhandledAlertException e) {
+			} catch (UnhandledAlertException e) {
 				element = getElement(locator);
 				waitForElementToBeClickable(locator);
 				clickElementByJS(element);
@@ -686,11 +627,13 @@ public class ElementUtil {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click();", element);
 	}
+
 	public void clickElementByJSlocator(By locator) {
 		WebElement element = getElement(locator);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click();", element);
 	}
+
 	public void sendKeysUsingWithId(String id, String value) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("document.getElementById('" + id + "').value='" + value + "'");
