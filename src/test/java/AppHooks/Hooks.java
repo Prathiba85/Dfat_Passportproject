@@ -41,7 +41,7 @@ public class Hooks {
 		driver.manage().window().maximize();
 	}
 	@After(order = 0)
-	public void teardownandScreenshot(Scenario scenario)
+	public void teardownandScreenshot()
 	{
 		//System.out.println("Scenario status ======>"+scenario.getSteps());
 		// byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
@@ -53,14 +53,15 @@ public class Hooks {
 		
 	}
 	@After(order =1)
-	public void teardown(Scenario scenario)
+	public void teardown()
 	{
+		/*
 		if(scenario.isFailed())
 		{
 			//String screenshotName = scenario.getName().replaceAll("", "_");
 			//byte[] sourcepath=((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
 			//scenario.attach(sourcepath, "image/png", screenshotName);
-		}
+		}*/
 	}
 	
 	/*
