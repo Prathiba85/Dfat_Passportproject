@@ -14,7 +14,7 @@ import com.qa.util.ConfigReader;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 
-//import io.cucumber.java.Scenario;
+import io.cucumber.java.Scenario;
 
 public class Hooks {
 
@@ -32,6 +32,7 @@ public class Hooks {
 		prop = configReader.init_prop();
 		
 	}
+
 	@Before (order = 1)
 	public void launchBrowser()
 	{
@@ -52,19 +53,20 @@ public class Hooks {
 		driver.quit();
 		
 	}
+	/*
 	@After(order =1)
 	public void teardown()
 	{
-		/*
+		
 		if(scenario.isFailed())
 		{
 			//String screenshotName = scenario.getName().replaceAll("", "_");
 			//byte[] sourcepath=((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
 			//scenario.attach(sourcepath, "image/png", screenshotName);
-		}*/
+		}
 	}
 	
-	/*
+	
 	@After(order = 0)
 	public void teardownandScreenshot(Scenario scenario)
 	{
