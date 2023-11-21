@@ -11,6 +11,7 @@ pool:
 
 steps:
 - task: Maven@3
+  displayName: 'Maven pom.xml'
   inputs:
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
@@ -20,9 +21,18 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
-- task: PublishCucumberReport@1
+
+- task: CopyFiles@2
+  displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
   inputs:
-    jsonDir: '$(System.DefaultWorkingDirectory)'
-    outputPath: '$(System.DefaultWorkingDirectory)'
-    theme: 'bootstrap'
-    reportSuiteAsScenarios: true
+    SourceFolder: '$(system.defaultworkingdirectory)'
+    Contents: '**/*.jar'
+    TargetFolder: '$(build.artifactstagingdirectory)'
+  condition: succeededOrFailed()
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: drop'
+  inputs:
+    PathtoPublish: '$(build.artifactstagingdirectory)'
+  condition: succeededOrFailed()
+
