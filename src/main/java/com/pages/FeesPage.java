@@ -34,6 +34,12 @@ public class FeesPage  {
 
 	public String getfees() {
 		
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		eleUtil.clickelement(txt_fees);
 		String passport_fees =  eleUtil.doGetText(txt_fees);
 		eleUtil.clickelement(btn_NextPage);

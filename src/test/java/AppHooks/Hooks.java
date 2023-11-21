@@ -63,6 +63,29 @@ public class Hooks {
 		}
 	}
 	
+	/*
+	@After(order = 0)
+	public void teardownandScreenshot(Scenario scenario)
+	{
+		//System.out.println("Scenario status ======>"+scenario.getSteps());
+		// byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+       // scenario.attach(screenshot, "image/png",scenario.getName());  
+		//String screenshotName = scenario.getName().replaceAll("", "_");
+		//byte[] sourcepath=((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+		//scenario.attach(sourcepath, "image/png", screenshotName);        
+		driver.quit();
+		
+	}
+	@After(order =1)
+	public void teardown(Scenario scenario)
+	{
+		if(scenario.isFailed())
+		{
+			//String screenshotName = scenario.getName().replaceAll("", "_");
+			//byte[] sourcepath=((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+			//scenario.attach(sourcepath, "image/png", screenshotName);
+		}
+	}*/
 	
 
 }

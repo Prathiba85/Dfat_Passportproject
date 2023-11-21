@@ -1,0 +1,323 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 2,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 3520215300,
+              "status": "passed"
+            },
+            "line": 3,
+            "name": "I enter valid username as \"sanprathi@gmail.com\" and password as \"Vimalprabhu-202310\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"sanprathi@gmail.com\"",
+                  "offset": 26
+                },
+                {
+                  "val": "\"Vimalprabhu-202310\"",
+                  "offset": 64
+                }
+              ],
+              "location": "stepdefinitions.PC1_StepDefinition.i_enter_valid_username_as_and_password_as(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1733269800,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "I click login",
+            "match": {
+              "location": "stepdefinitions.PC1_StepDefinition.i_click_login()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 69724800,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "user is logged in Successfully",
+            "match": {
+              "location": "stepdefinitions.PC1_StepDefinition.user_is_logged_in_Successfully()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2023-11-21T00:01:10.058Z",
+        "before": [
+          {
+            "result": {
+              "duration": 2998600,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AppHooks.Hooks.getProperty()"
+            }
+          },
+          {
+            "result": {
+              "duration": 1942925200,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AppHooks.Hooks.launchBrowser()"
+            }
+          }
+        ],
+        "line": 8,
+        "name": "Successful Login with Valid Credentials",
+        "description": "",
+        "id": "this-feature-will-allow-you-to-create-checklist-for-pc1-applicaiton.;successful-login-with-valid-credentials",
+        "after": [
+          {
+            "result": {
+              "duration": 2991900,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AppHooks.Hooks.teardown(io.cucumber.java.Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 1146382200,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AppHooks.Hooks.teardownandScreenshot(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 269291600,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I click Start renewal/passport",
+            "match": {
+              "location": "stepdefinitions.PC1_StepDefinition.i_click_Start_renewal_passport()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 7852748800,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "I read test data for testcase for PC1",
+            "match": {
+              "location": "stepdefinitions.PC1_StepDefinition.i_read_test_data_for_testcase_for_pc1()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2000300,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "I select that I am completing the application for \"Myself\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Myself\"",
+                  "offset": 50
+                }
+              ],
+              "location": "stepdefinitions.PC1_StepDefinition.i_select_that_i_am_completing_the_application_for(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 12327051600,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "I enter personal details",
+            "match": {
+              "location": "stepdefinitions.PC1_StepDefinition.i_enter_personal_details()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 13976097600,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "I enter contact details",
+            "match": {
+              "location": "stepdefinitions.PC1_StepDefinition.i_enter_contact_details()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2839147600,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "I enter previous passport details",
+            "match": {
+              "location": "stepdefinitions.PC1_StepDefinition.i_enter_previous_passport_details()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1678581200,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "I choose Do you have Australian Birth Certificate as \"No\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"No\"",
+                  "offset": 53
+                }
+              ],
+              "location": "stepdefinitions.PC1_StepDefinition.i_choose_do_you_have_australian_birth_certificate_as(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 4987104600,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "I choose Do you have an Austraial Citizenship Certificate as \"Yes\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Yes\"",
+                  "offset": 61
+                }
+              ],
+              "location": "stepdefinitions.PC1_StepDefinition.i_choose_do_you_have_an_austraial_citizenship_certificate_as(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 29168930100,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "I enter Citizenshipdetails",
+            "match": {
+              "location": "stepdefinitions.PC1_StepDefinition.i_enter_citizenshipdetails()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 7885228000,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "I confirm Identity",
+            "match": {
+              "location": "stepdefinitions.PC1_StepDefinition.i_confirm_identity()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 40867771200,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "I confirm Referee details",
+            "match": {
+              "location": "stepdefinitions.PC1_StepDefinition.i_confirm_referee_details()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 17987517500,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "I enter Emergency contact details",
+            "match": {
+              "location": "stepdefinitions.PC1_StepDefinition.i_enter_emergency_contact_details()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "error_message": "org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //div[@class\u003d\u0027fee-option-content\u0027]//div[contains(text(),\u0027A$\u0027)] (tried for 30 second(s) with 500 milliseconds interval)\r\n\tat org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)\r\n\tat org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)\r\n\tat com.qa.util.ElementUtil.waitForElementToBeClickable(ElementUtil.java:283)\r\n\tat com.qa.util.ElementUtil.StaleElementforClickablebutton(ElementUtil.java:205)\r\n\tat com.qa.util.ElementUtil.clickelement(ElementUtil.java:68)\r\n\tat com.pages.FeesPage.getfees(FeesPage.java:43)\r\n\tat stepdefinitions.PC1_StepDefinition.i_confirm_passport_fees(PC1_StepDefinition.java:146)\r\n\tat ✽.I confirm Passport fees(file:///C:/Users/sanpr/exlipsefolder2/DFAT_PassportProject/target/test-classes/features/PC1Form.feature:21)\r\nCaused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//div[@class\u003d\u0027fee-option-content\u0027]//div[contains(text(),\u0027A$\u0027)]\"}\n  (Session info: MicrosoftEdge\u003d119.0.2151.72)\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027DESKTOP-UNVGE05\u0027, ip: \u0027192.168.6.51\u0027, os.name: \u0027Windows 11\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002711.0.16\u0027\nDriver info: org.openqa.selenium.edge.EdgeDriver\nCapabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 119.0.2151.72, fedcm:accounts: true, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:64864}, msedge: {msedgedriverVersion: 119.0.2151.72 (e8225cce8e47..., userDataDir: C:\\Users\\sanpr\\AppData\\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}\nSession ID: cc96b85959a356fb48ae6e3406d67a88\n*** Element info: {Using\u003dxpath, value\u003d//div[@class\u003d\u0027fee-option-content\u0027]//div[contains(text(),\u0027A$\u0027)]}\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\r\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:641)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:638)\r\n\tat org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)\r\n\tat com.qa.util.ElementUtil.waitForElementToBeClickable(ElementUtil.java:283)\r\n\tat com.qa.util.ElementUtil.StaleElementforClickablebutton(ElementUtil.java:205)\r\n\tat com.qa.util.ElementUtil.clickelement(ElementUtil.java:68)\r\n\tat com.pages.FeesPage.getfees(FeesPage.java:43)\r\n\tat stepdefinitions.PC1_StepDefinition.i_confirm_passport_fees(PC1_StepDefinition.java:146)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:566)\r\n\tat io.cucumber.java.Invoker.doInvoke(Invoker.java:66)\r\n\tat io.cucumber.java.Invoker.invoke(Invoker.java:24)\r\n\tat io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)\r\n\tat io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)\r\n\tat io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)\r\n\tat io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)\r\n\tat io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)\r\n\tat io.cucumber.core.runner.TestStep.executeStep(TestStep.java:92)\r\n\tat io.cucumber.core.runner.TestStep.run(TestStep.java:64)\r\n\tat io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)\r\n\tat io.cucumber.core.runner.TestCase.run(TestCase.java:104)\r\n\tat io.cucumber.core.runner.Runner.runPickle(Runner.java:71)\r\n\tat io.cucumber.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:151)\r\n\tat io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:135)\r\n\tat io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:27)\r\n\tat org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)\r\n\tat org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)\r\n\tat org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:413)\r\n\tat io.cucumber.junit.Cucumber.runChild(Cucumber.java:199)\r\n\tat io.cucumber.junit.Cucumber.runChild(Cucumber.java:90)\r\n\tat org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)\r\n\tat org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)\r\n\tat io.cucumber.junit.Cucumber$RunCucumber.evaluate(Cucumber.java:234)\r\n\tat org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:413)\r\n\tat org.junit.runner.JUnitCore.run(JUnitCore.java:137)\r\n\tat org.junit.runner.JUnitCore.run(JUnitCore.java:115)\r\n\tat org.testng.junit.JUnit4TestRunner.start(JUnit4TestRunner.java:82)\r\n\tat org.testng.junit.JUnit4TestRunner.run(JUnit4TestRunner.java:70)\r\n\tat org.testng.TestRunner$1.run(TestRunner.java:570)\r\n\tat org.testng.TestRunner.runJUnitWorkers(TestRunner.java:717)\r\n\tat org.testng.TestRunner.privateRunJUnit(TestRunner.java:601)\r\n\tat org.testng.TestRunner.run(TestRunner.java:502)\r\n\tat org.testng.SuiteRunner.runTest(SuiteRunner.java:455)\r\n\tat org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)\r\n\tat org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)\r\n\tat org.testng.SuiteRunner.run(SuiteRunner.java:364)\r\n\tat org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)\r\n\tat org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)\r\n\tat org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)\r\n\tat org.testng.TestNG.runSuitesLocally(TestNG.java:1137)\r\n\tat org.testng.TestNG.runSuites(TestNG.java:1049)\r\n\tat org.testng.TestNG.run(TestNG.java:1017)\r\n\tat org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:151)\r\n\tat org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:111)\r\n\tat org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:98)\r\n\tat org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:155)\r\n\tat org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)\r\n\tat org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)\r\n\tat org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)\r\n\tat org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)\r\n",
+              "duration": 81118989800,
+              "status": "failed"
+            },
+            "line": 21,
+            "name": "I confirm Passport fees",
+            "match": {
+              "location": "stepdefinitions.PC1_StepDefinition.i_confirm_passport_fees()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1003100,
+              "status": "skipped"
+            },
+            "line": 22,
+            "name": "I review application and click Next",
+            "match": {
+              "location": "stepdefinitions.PC1_StepDefinition.i_review_application_and_click_next()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 999900,
+              "status": "skipped"
+            },
+            "line": 23,
+            "name": "I can confirm that PC1 applicaiton is launched successfully",
+            "match": {
+              "location": "stepdefinitions.PC1_StepDefinition.i_can_confirm_that_pc1_applicaiton_is_launched_successfully()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@tag1"
+          }
+        ]
+      }
+    ],
+    "name": "This feature will allow you to create checklist for PC1 applicaiton.",
+    "description": "",
+    "id": "this-feature-will-allow-you-to-create-checklist-for-pc1-applicaiton.",
+    "keyword": "Feature",
+    "uri": "file:target/test-classes/features/PC1Form.feature",
+    "tags": []
+  }
+]
