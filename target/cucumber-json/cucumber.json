@@ -11,7 +11,7 @@
         "steps": [
           {
             "result": {
-              "duration": 3520215300,
+              "duration": 2793362700,
               "status": "passed"
             },
             "line": 3,
@@ -33,7 +33,7 @@
           },
           {
             "result": {
-              "duration": 1733269800,
+              "duration": 2774716300,
               "status": "passed"
             },
             "line": 4,
@@ -45,7 +45,7 @@
           },
           {
             "result": {
-              "duration": 69724800,
+              "duration": 106263300,
               "status": "passed"
             },
             "line": 5,
@@ -58,24 +58,24 @@
         ]
       },
       {
-        "start_timestamp": "2023-11-21T00:01:10.058Z",
+        "start_timestamp": "2023-11-21T01:04:23.183Z",
         "before": [
           {
             "result": {
-              "duration": 2998600,
+              "duration": 3036800,
               "status": "passed"
             },
             "match": {
-              "location": "AppHooks.Hooks.getProperty()"
+              "location": "stepdefinitions.Hooks.getProperty()"
             }
           },
           {
             "result": {
-              "duration": 1942925200,
+              "duration": 1480145700,
               "status": "passed"
             },
             "match": {
-              "location": "AppHooks.Hooks.launchBrowser()"
+              "location": "stepdefinitions.Hooks.launchBrowser()"
             }
           }
         ],
@@ -86,20 +86,20 @@
         "after": [
           {
             "result": {
-              "duration": 2991900,
+              "duration": 1001000,
               "status": "passed"
             },
             "match": {
-              "location": "AppHooks.Hooks.teardown(io.cucumber.java.Scenario)"
+              "location": "stepdefinitions.Hooks.teardown()"
             }
           },
           {
             "result": {
-              "duration": 1146382200,
+              "duration": 1126343500,
               "status": "passed"
             },
             "match": {
-              "location": "AppHooks.Hooks.teardownandScreenshot(io.cucumber.java.Scenario)"
+              "location": "stepdefinitions.Hooks.teardownandScreenshot()"
             }
           }
         ],
@@ -108,7 +108,7 @@
         "steps": [
           {
             "result": {
-              "duration": 269291600,
+              "duration": 328626500,
               "status": "passed"
             },
             "line": 9,
@@ -120,7 +120,7 @@
           },
           {
             "result": {
-              "duration": 7852748800,
+              "duration": 7837685300,
               "status": "passed"
             },
             "line": 10,
@@ -132,7 +132,7 @@
           },
           {
             "result": {
-              "duration": 2000300,
+              "duration": 998000,
               "status": "passed"
             },
             "line": 11,
@@ -150,7 +150,7 @@
           },
           {
             "result": {
-              "duration": 12327051600,
+              "duration": 12418753400,
               "status": "passed"
             },
             "line": 12,
@@ -162,7 +162,7 @@
           },
           {
             "result": {
-              "duration": 13976097600,
+              "duration": 15939969800,
               "status": "passed"
             },
             "line": 13,
@@ -174,7 +174,7 @@
           },
           {
             "result": {
-              "duration": 2839147600,
+              "duration": 2915031000,
               "status": "passed"
             },
             "line": 14,
@@ -186,7 +186,7 @@
           },
           {
             "result": {
-              "duration": 1678581200,
+              "duration": 1711507000,
               "status": "passed"
             },
             "line": 15,
@@ -204,7 +204,7 @@
           },
           {
             "result": {
-              "duration": 4987104600,
+              "duration": 5153867400,
               "status": "passed"
             },
             "line": 16,
@@ -222,7 +222,7 @@
           },
           {
             "result": {
-              "duration": 29168930100,
+              "duration": 31678437700,
               "status": "passed"
             },
             "line": 17,
@@ -234,7 +234,7 @@
           },
           {
             "result": {
-              "duration": 7885228000,
+              "duration": 8192537200,
               "status": "passed"
             },
             "line": 18,
@@ -246,7 +246,7 @@
           },
           {
             "result": {
-              "duration": 40867771200,
+              "duration": 41975563200,
               "status": "passed"
             },
             "line": 19,
@@ -258,7 +258,7 @@
           },
           {
             "result": {
-              "duration": 17987517500,
+              "duration": 19066517400,
               "status": "passed"
             },
             "line": 20,
@@ -270,8 +270,8 @@
           },
           {
             "result": {
-              "error_message": "org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //div[@class\u003d\u0027fee-option-content\u0027]//div[contains(text(),\u0027A$\u0027)] (tried for 30 second(s) with 500 milliseconds interval)\r\n\tat org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)\r\n\tat org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)\r\n\tat com.qa.util.ElementUtil.waitForElementToBeClickable(ElementUtil.java:283)\r\n\tat com.qa.util.ElementUtil.StaleElementforClickablebutton(ElementUtil.java:205)\r\n\tat com.qa.util.ElementUtil.clickelement(ElementUtil.java:68)\r\n\tat com.pages.FeesPage.getfees(FeesPage.java:43)\r\n\tat stepdefinitions.PC1_StepDefinition.i_confirm_passport_fees(PC1_StepDefinition.java:146)\r\n\tat ✽.I confirm Passport fees(file:///C:/Users/sanpr/exlipsefolder2/DFAT_PassportProject/target/test-classes/features/PC1Form.feature:21)\r\nCaused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//div[@class\u003d\u0027fee-option-content\u0027]//div[contains(text(),\u0027A$\u0027)]\"}\n  (Session info: MicrosoftEdge\u003d119.0.2151.72)\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027DESKTOP-UNVGE05\u0027, ip: \u0027192.168.6.51\u0027, os.name: \u0027Windows 11\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002711.0.16\u0027\nDriver info: org.openqa.selenium.edge.EdgeDriver\nCapabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 119.0.2151.72, fedcm:accounts: true, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:64864}, msedge: {msedgedriverVersion: 119.0.2151.72 (e8225cce8e47..., userDataDir: C:\\Users\\sanpr\\AppData\\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}\nSession ID: cc96b85959a356fb48ae6e3406d67a88\n*** Element info: {Using\u003dxpath, value\u003d//div[@class\u003d\u0027fee-option-content\u0027]//div[contains(text(),\u0027A$\u0027)]}\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\r\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:641)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:638)\r\n\tat org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)\r\n\tat com.qa.util.ElementUtil.waitForElementToBeClickable(ElementUtil.java:283)\r\n\tat com.qa.util.ElementUtil.StaleElementforClickablebutton(ElementUtil.java:205)\r\n\tat com.qa.util.ElementUtil.clickelement(ElementUtil.java:68)\r\n\tat com.pages.FeesPage.getfees(FeesPage.java:43)\r\n\tat stepdefinitions.PC1_StepDefinition.i_confirm_passport_fees(PC1_StepDefinition.java:146)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:566)\r\n\tat io.cucumber.java.Invoker.doInvoke(Invoker.java:66)\r\n\tat io.cucumber.java.Invoker.invoke(Invoker.java:24)\r\n\tat io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)\r\n\tat io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)\r\n\tat io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)\r\n\tat io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)\r\n\tat io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)\r\n\tat io.cucumber.core.runner.TestStep.executeStep(TestStep.java:92)\r\n\tat io.cucumber.core.runner.TestStep.run(TestStep.java:64)\r\n\tat io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)\r\n\tat io.cucumber.core.runner.TestCase.run(TestCase.java:104)\r\n\tat io.cucumber.core.runner.Runner.runPickle(Runner.java:71)\r\n\tat io.cucumber.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:151)\r\n\tat io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:135)\r\n\tat io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:27)\r\n\tat org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)\r\n\tat org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)\r\n\tat org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:413)\r\n\tat io.cucumber.junit.Cucumber.runChild(Cucumber.java:199)\r\n\tat io.cucumber.junit.Cucumber.runChild(Cucumber.java:90)\r\n\tat org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)\r\n\tat org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)\r\n\tat io.cucumber.junit.Cucumber$RunCucumber.evaluate(Cucumber.java:234)\r\n\tat org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:413)\r\n\tat org.junit.runner.JUnitCore.run(JUnitCore.java:137)\r\n\tat org.junit.runner.JUnitCore.run(JUnitCore.java:115)\r\n\tat org.testng.junit.JUnit4TestRunner.start(JUnit4TestRunner.java:82)\r\n\tat org.testng.junit.JUnit4TestRunner.run(JUnit4TestRunner.java:70)\r\n\tat org.testng.TestRunner$1.run(TestRunner.java:570)\r\n\tat org.testng.TestRunner.runJUnitWorkers(TestRunner.java:717)\r\n\tat org.testng.TestRunner.privateRunJUnit(TestRunner.java:601)\r\n\tat org.testng.TestRunner.run(TestRunner.java:502)\r\n\tat org.testng.SuiteRunner.runTest(SuiteRunner.java:455)\r\n\tat org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)\r\n\tat org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)\r\n\tat org.testng.SuiteRunner.run(SuiteRunner.java:364)\r\n\tat org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)\r\n\tat org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)\r\n\tat org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)\r\n\tat org.testng.TestNG.runSuitesLocally(TestNG.java:1137)\r\n\tat org.testng.TestNG.runSuites(TestNG.java:1049)\r\n\tat org.testng.TestNG.run(TestNG.java:1017)\r\n\tat org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:151)\r\n\tat org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:111)\r\n\tat org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:98)\r\n\tat org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:155)\r\n\tat org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)\r\n\tat org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)\r\n\tat org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)\r\n\tat org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)\r\n",
-              "duration": 81118989800,
+              "error_message": "org.openqa.selenium.UnhandledAlertException: unexpected alert open: {Alert text : }\n  (Session info: MicrosoftEdge\u003d119.0.2151.72): {Alert text : \nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027DESKTOP-UNVGE05\u0027, ip: \u0027192.168.6.51\u0027, os.name: \u0027Windows 11\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002711.0.16\u0027\nDriver info: org.openqa.selenium.edge.EdgeDriver\nCapabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 119.0.2151.72, fedcm:accounts: true, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:52960}, msedge: {msedgedriverVersion: 119.0.2151.72 (e8225cce8e47..., userDataDir: C:\\Users\\sanpr\\AppData\\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}\nSession ID: 38a081d616a53e6dfb1a64ec6385283e\n*** Element info: {Using\u003dxpath, value\u003d//div[@class\u003d\u0027fee-option-content\u0027]//div[contains(text(),\u0027A$\u0027)]}\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\r\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:641)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:638)\r\n\tat org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)\r\n\tat com.qa.util.ElementUtil.waitForElementToBeClickable(ElementUtil.java:283)\r\n\tat com.qa.util.ElementUtil.StaleElementforClickablebutton(ElementUtil.java:199)\r\n\tat com.qa.util.ElementUtil.clickelement(ElementUtil.java:68)\r\n\tat com.pages.FeesPage.getfees(FeesPage.java:43)\r\n\tat stepdefinitions.PC1_StepDefinition.i_confirm_passport_fees(PC1_StepDefinition.java:146)\r\n\tat ✽.I confirm Passport fees(file:///C:/Users/sanpr/exlipsefolder2/DFAT_PassportProject/target/test-classes/features/PC1Form.feature:21)\r\n",
+              "duration": 6553840400,
               "status": "failed"
             },
             "line": 21,
@@ -283,7 +283,6 @@
           },
           {
             "result": {
-              "duration": 1003100,
               "status": "skipped"
             },
             "line": 22,
@@ -295,7 +294,7 @@
           },
           {
             "result": {
-              "duration": 999900,
+              "duration": 1000900,
               "status": "skipped"
             },
             "line": 23,
