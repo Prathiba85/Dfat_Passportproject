@@ -1,10 +1,4 @@
 # Maven
-- task: PublishCucumberReport@1
-  inputs:
-    jsonDir: '$(System.DefaultWorkingDirectory)'
-    outputPath: '$(System.DefaultWorkingDirectory)'
-    theme: 'bootstrap'
-    reportSuiteAsScenarios: true
 # Build your Java project and run tests with Apache Maven.
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
@@ -42,3 +36,9 @@ steps:
     PathtoPublish: '$(build.artifactstagingdirectory)'
   condition: succeededOrFailed()
 
+- task: PublishCucumberReport@1
+  inputs:
+    jsonDir: '$(System.DefaultWorkingDirectory)'
+    outputPath: '$(System.DefaultWorkingDirectory)'
+    theme: 'bootstrap'
+    reportSuiteAsScenarios: true
