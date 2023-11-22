@@ -122,6 +122,14 @@ public void setTestData(String ApplicationType) {
 		eleUtil.doSendKeysWithWaitCheckStaleElementException(txt_ParentsFamilyName, exutil.getTestData("FAMILYNAME"));
 		eleUtil.clickelement(btn_NextPage);
 		
+		try {
+			System.out.println("**********************************Application Number is  *********************"+"S1475860");
+			String ApplicaitonNumber = "S1475860";
+			exutil.insertGenerateFormNumber(ApplicaitonNumber);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		 return new ContactDetailsPage(driver);
 
 		}

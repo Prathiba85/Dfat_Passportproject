@@ -47,6 +47,7 @@ public class PC1_StepDefinition {
 	public void i_click_login() {
 		homepage = new HomePage(DriverFactory.getDriver());
 		homepage = loginpage.clickLogin();
+		
 
 	}
 
@@ -63,13 +64,7 @@ public class PC1_StepDefinition {
 
 	}
 
-	@Given("I read test data for testcase for PC1")
-	public void i_read_test_data_for_testcase_for_pc1() {
-		//personalpage = new PersonalDetailsPage(DriverFactory.getDriver());
-		//personalpage.chooseLodgementLocation();
-		//personalpage.chooseAdultApplicant();
-		//personalpage.clickNext();
-	}
+
 	
 	@Given("I read test data for testcase for {string}")
 	public void i_read_test_data_for_testcase_for(String ApplicationType) {
@@ -85,6 +80,7 @@ public class PC1_StepDefinition {
 		personalpage.chooseApplicant(Applicant);
 	}
 	
+	
 	@When("I enter personal details")
 	public void i_enter_personal_details() {
 		contactdetailspage = new ContactDetailsPage(DriverFactory.getDriver());
@@ -94,65 +90,66 @@ public class PC1_StepDefinition {
 
 	@When("I enter contact details")
 	public void i_enter_contact_details() {
-		previouspassportpage = new PreviousPassportPage(DriverFactory.getDriver());
-		previouspassportpage = contactdetailspage.enterContactDetails();
+		
+	//	previouspassportpage = new PreviousPassportPage(DriverFactory.getDriver());
+		//previouspassportpage = contactdetailspage.enterContactDetails();
 
 	}
 	@When("I enter previous passport details")
 	public void i_enter_previous_passport_details() {
-		  citizenshippage = new ConfirmingCitizenshipPage(DriverFactory.getDriver());
-		  citizenshippage= previouspassportpage.chooseHadAustralianPassport();
+		//  citizenshippage = new ConfirmingCitizenshipPage(DriverFactory.getDriver());
+		//  citizenshippage= previouspassportpage.chooseHadAustralianPassport();
 	}
 
 	@When("I choose Do you have Australian Birth Certificate as {string}")
 	public void i_choose_do_you_have_australian_birth_certificate_as(String string) {
-		citizenshippage.haveAustralianBirthCertificate("No");
+		//citizenshippage.haveAustralianBirthCertificate("No");
 	}
 
 	@When("I choose Do you have an Austraial Citizenship Certificate as {string}")
 	public void i_choose_do_you_have_an_austraial_citizenship_certificate_as(String string) {
-		citizenshippage.haveAustralianBirthCertificate("No");
-		citizenshippage.haveCitizenshipCertificate("Yes");
-		citizenshippage.chooseCitizenshipType();
+		//citizenshippage.haveAustralianBirthCertificate("No");
+		//citizenshippage.haveCitizenshipCertificate("Yes");
+		//citizenshippage.chooseCitizenshipType();
 	 
 	}
 
 	@When("I enter Citizenshipdetails")
 	public void i_enter_citizenshipdetails() {
-		citizenshippage.enterCitizenshipDetails();
-		citizenshippage.enterSupportingDocumentDetails("Foreign Passport");
-		citizenshippage.enterForeignPassportDetails();
-		confirmingnamepage = new ConfirmingNameChangePage(DriverFactory.getDriver());
-		confirmingnamepage.istherenamechange("No");
+		//citizenshippage.enterCitizenshipDetails();
+		//citizenshippage.enterSupportingDocumentDetails("Foreign Passport");
+		//citizenshippage.enterForeignPassportDetails();
+		//confirmingnamepage = new ConfirmingNameChangePage(DriverFactory.getDriver());
+		//confirmingnamepage.istherenamechange("No");
 	}
 
 	@When("I confirm Identity")
 	public void i_confirm_identity() {
-		 confirmingidentitypage = new ConfirmingIdentityPage(DriverFactory.getDriver());
-		 confirmingidentitypage.clickCategoryAdoc("Proof of age/photcard");
-		 confirmingidentitypage.clickCategoryBdoc("Credit Card");
-		 confirmingidentitypage.isaddressresidenceavailable("Yes");
+	// confirmingidentitypage = new ConfirmingIdentityPage(DriverFactory.getDriver());
+		// confirmingidentitypage.clickCategoryAdoc("Proof of age/photcard");
+		// confirmingidentitypage.clickCategoryBdoc("Credit Card");
+		// confirmingidentitypage.isaddressresidenceavailable("Yes");
 	}
 
 	@When("I confirm Referee details")
 	public void i_confirm_referee_details() {
-		refereepage= new RefereePage(DriverFactory.getDriver());
-		refereepage.enterRefereedetails();
+		//refereepage= new RefereePage(DriverFactory.getDriver());
+		//refereepage.enterRefereedetails();
 	   
 	}
 
 	@When("I enter Emergency contact details")
 	public void i_enter_emergency_contact_details() {
-		 emergencycontactpage = new EmergencyContactPage(DriverFactory.getDriver());
-		 emergencycontactpage.enterEmergencyContactDetails();
+		// emergencycontactpage = new EmergencyContactPage(DriverFactory.getDriver());
+		// emergencycontactpage.enterEmergencyContactDetails();
 	
 	}
 
 	@When("I confirm Passport fees")
 	public void i_confirm_passport_fees() {
-		FeesPage feepage = new FeesPage(DriverFactory.getDriver());
+		//FeesPage feepage = new FeesPage(DriverFactory.getDriver());
 		
-		String actualfees= feepage.getfees();
+		//String actualfees= feepage.getfees();
 	}
 
 	@When("I review application and click Next")
