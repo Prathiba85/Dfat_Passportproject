@@ -43,7 +43,7 @@ public class FeesPage  {
 		//eleUtil.clickelement(txt_fees);
 		String passport_fees =  eleUtil.doGetText(txt_fees);
 		eleUtil.clickelement(btn_NextPage);
-		System.out.println("**********************************Applicant Surname *********************"+"Tobby");
+		System.out.println("**********************************Application Number is  *********************"+"S1475860");
 		return passport_fees;
 	}
 
