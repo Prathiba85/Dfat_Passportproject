@@ -128,7 +128,7 @@ public class ReviewApplicationPage {
 		
 		 try { System.out. println("**********************************Application Number is  *********************"+"S1475860"); 
 		 String ApplicaitonNumber = "S1475860";
-		// exutil.insertGenerateFormNumber(ApplicaitonNumber); 
+		exutil.insertGenerateFormNumber(ApplicaitonNumber); 
 		 } 
 		 catch (Exception e) {
 		 }
