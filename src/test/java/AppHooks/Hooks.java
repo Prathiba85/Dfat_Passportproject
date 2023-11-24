@@ -40,6 +40,7 @@ public class Hooks {
 		driver = driverFactory.init_driver(browserName);
 		driver.manage().window().maximize();
 	}
+	/*
 	@After(order = 0)
 	public void teardownandScreenshot(Scenario scenario)
 	{
@@ -61,8 +62,21 @@ public class Hooks {
 			byte[] sourcepath=((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
 			scenario.attach(sourcepath, "image/png", screenshotName);
 		}
+	}*/
+	
+	@After(order = 0)
+	public void teardownandScreenshot()
+	{
+		driver.quit();
+		
 	}
-	
-	
+	@After(order =1)
+	public void teardown(Scenario scenario)
+	{
+		if(scenario.isFailed())
+		{
+			
+		}
+	}
 
 }
