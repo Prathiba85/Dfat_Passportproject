@@ -107,7 +107,7 @@ public class ConfirmingCitizenshipPage {
 				exutil.getTestData("DATEACQUIRED"));
 		eleUtil.doSendKeysWithWaitCheckStaleElementException(txt_CitizenshipIssuedDate,
 				exutil.getTestData("DATEISSUED"));
-		eleUtil.clickelementtoValidate(btn_Validate,btn_Verified);
+		eleUtil.clickelementtoValidate(btn_Validate);
 		
 		
 		

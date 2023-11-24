@@ -30,23 +30,28 @@ public class FeesPage  {
 	private By txt_fees = By.xpath("//div[@class='fee-option-content']//div[contains(text(),'A$')]");
 	private By btn_NextPage = By.xpath("//input[@id='btnNextBottom']");
 	
+	private By lnk_PassporttypeandFees = By.xpath("//a[text()='Passport type and fees']");
 
 
 	public String getfees() {
 		
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		//eleUtil.clickelement(txt_fees);
+		//eleUtil.scrollToElementbyJavaScriptExecutor(txt_fees);
+		
+		
 		String passport_fees =  eleUtil.doGetText(txt_fees);
-		eleUtil.clickelement(btn_NextPage);
+		System.out.println("Fee details from fee page "+passport_fees);
+		
 		
 		return passport_fees;
 	}
 	
+	public void clicknext()
+	{
+	
+		eleUtil.clickelement(lnk_PassporttypeandFees);
+		
+		eleUtil.clickelement(btn_NextPage);
+	}
 	public void markTestDataasUsed()
 	{
 		System.out.println(exutil.getTestData("TestDataID"));

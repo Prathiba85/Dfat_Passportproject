@@ -17,7 +17,6 @@ import org.slf4j.Logger;
 import com.qa.util.ElementUtil;
 import com.qa.util.ExcelUtil;
 
-
 public class PersonalDetailsPage {
 
 	private WebDriver driver;
@@ -51,27 +50,31 @@ public class PersonalDetailsPage {
 	private By txt_DOB = By.xpath("//input[@id = 'Q42']");
 	private By txt_ParentsFamilyName = By.xpath("//input[@id='Q847']");
 	private By btn_NextPage = By.xpath("//input[@id='btnNextBottom']");
-	//private By Alert = By.xpath("//span[text()=' This is a required field']");
+
+	// private By Alert = By.xpath("//span[text()=' This is a required field']");
 	public String getHomePageTitle() {
 		return eleUtil.doGetText(txt_Title);
 
 	}
 
-	public void chooseLodgementLocation() {
+	public void chooseLodgementLocation(String location) {
 		eleUtil.scrollPageDown();
-		eleUtil.clickradiobutton(chk_Australia);
+		if (location.equals("Australia")) {
+			eleUtil.clickradiobutton(chk_Australia);
+		}
 
 	}
 
-	public void chooseAdultApplicant() {
-		eleUtil.scrollToElementbyJavaScriptExecutor(chk_Adult);
-		eleUtil.clickradiobutton(chk_Adult);
+	public void chooseAdultApplicant(String Applicant) {
+		if (Applicant.equals("Adult")) {
+			eleUtil.scrollToElementbyJavaScriptExecutor(chk_Adult);
+			eleUtil.clickradiobutton(chk_Adult);
+		}
 
 	}
 
 	public void clickNext() {
 
-	
 		eleUtil.scrollToElementbyJavaScriptExecutor(chk_Next);
 		eleUtil.clickelement(chk_Next);
 
@@ -79,29 +82,32 @@ public class PersonalDetailsPage {
 
 	public void chooseApplicant(String applicant) {
 		if (applicant.equalsIgnoreCase("Other Adult")) {
-			//eleUtil.waitForElementPresence(rdn_myself, 30);
-			//eleUtil.clickradiobutton(rdn_myself);
+			// eleUtil.waitForElementPresence(rdn_myself, 30);
+			// eleUtil.clickradiobutton(rdn_myself);
 		}
 	}
-public void setTestData(String ApplicationType) {
-	if(ApplicationType.equals("PC1_CitizenshipCertificate"))
-	{
-		String Sheetname = "PC1_CitizenshipCertificate";
-		exutil.setTestDataSheet(Sheetname);
-		
-	}
-		
-		
+
+	public void setTestData(String ApplicationType) {
+		if (ApplicationType.equals("PC1_CitizenshipCertificate")) {
+			String Sheetname = "PC1_CitizenshipCertificate";
+			exutil.setTestDataSheet(Sheetname);
+
+		}
+
+		if (ApplicationType.equals("PC7_PassportRenewal")) {
+			String Sheetname = "PC7_PassportRenewal";
+			exutil.setTestDataSheet(Sheetname);
+
+		}
+
 	}
 
-	public ContactDetailsPage enterPersonalDetails() {
-	
-		
+	public void enterPersonalDetails() {
+
 		eleUtil.doSendKeysWithWaitCheckStaleElementException(txt_familyname, exutil.getTestData("FAMILYNAME"));
-		
-		
+
 		eleUtil.doSendKeysWithWaitCheckStaleElementException(txt_givennames, exutil.getTestData("GIVENNAMES"));
-		
+
 		String sex = exutil.getTestData("SEX");
 		if (sex.equals("M")) {
 			eleUtil.clickradiobutton(chk_persondetailsMale);
@@ -115,25 +121,21 @@ public void setTestData(String ApplicationType) {
 			eleUtil.clickradiobutton(chk_persondetailsIntersex);
 
 		}
-		
+
 		eleUtil.scrollPageDown();
 		eleUtil.doSendKeysWithWaitCheckStaleElementException(txt_DOB, exutil.getTestData("DOB"));
 		eleUtil.doSendKeysWithWaitCheckStaleElementException(txt_countryOfBirth, exutil.getTestData("COB"));
 		eleUtil.doSendKeysWithWaitCheckStaleElementException(txt_ParentsFamilyName, exutil.getTestData("FAMILYNAME"));
 		eleUtil.clickelement(btn_NextPage);
-		
-		try {
-			System.out.println("**********************************Application Number is  *********************"+"S1475860");
-			String ApplicaitonNumber = "S1475860";
-			exutil.insertGenerateFormNumber(ApplicaitonNumber);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		 return new ContactDetailsPage(driver);
+		/*
+		 * try { System.out.
+		 * println("**********************************Application Number is  *********************"
+		 * +"S1475860"); String ApplicaitonNumber = "S1475860";
+		 * exutil.insertGenerateFormNumber(ApplicaitonNumber); } catch (Exception e) {
+		 * // TODO Auto-generated catch block e.printStackTrace(); }
+		 */
+		// return new ContactDetailsPage(driver);
 
-		}
-
-	
+	}
 
 }

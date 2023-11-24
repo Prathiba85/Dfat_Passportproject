@@ -83,7 +83,9 @@ public class RefereePage {
 
 	private By txt_RefereePassportExpiryDate = By.xpath("//input[contains(@id,'Q29') and @type='text']");
 
-	private By txt_RefereeMobileNumber = By.xpath("//label[contains(text(),'Mobile')]/following::input[contains(@id,'Q14')]");
+	private By txt_RefereeMobileNumber = By
+			.xpath("//label[contains(text(),'Mobile')]/following::input[contains(@id,'Q14')]");
+	private By txt_title = By.xpath("//h2[@id='page-title']");
 
 	public void enterRefereedetails() {
 		eleUtil.clickElementbyJavaScriptExecutorCheckStaleElement(chk_Confirm);
@@ -121,6 +123,14 @@ public class RefereePage {
 		eleUtil.doSendKeysWithWaitCheckStaleElementException(txt_RefereeMobileNumber, "0433681633");
 		eleUtil.clickelement(btn_NextPage);
 
+	}
+
+	public void click_Next() {
+		String title = eleUtil.doGetTitle(txt_title);
+		if (title.equals("Referee details")) {
+			eleUtil.clickelement(btn_NextPage);
+		} else {
+		}
 	}
 
 }

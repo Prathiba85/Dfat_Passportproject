@@ -7,19 +7,18 @@ Then user is logged in Successfully
 @tag1
 Scenario: Successful Login with Valid Credentials
 Given I click Start renewal/passport
-And I read test data for testcase for "PC1_CitizenshipCertificate"
+And I read test data for testcase for "PC7_PassportRenewal"
 When I select logement location as "Australia"
 And I apply for a "Adult" application 
 And I select that I am completing the application for "Myself" 
 And I enter personal details 
 And I enter contact details 
-And I enter previous passport details 
-And I choose Do you have Australian Birth Certificate as "No"
-And I choose Do you have an Austraial Citizenship Certificate as "Yes"
-And I enter Citizenshipdetails
-And I confirm Identity
-And I confirm Referee details
+And I enter Have you had a Australian Passport as "Yes"
+And I enter Are you able to present your most recently issued passport as "Yes"
+And I enter Are you applying for data breach as "No"
+And I enter previous passport details as per spreadsheet
 And I enter Emergency contact details
+And if Referee Page is available click next
 And I confirm Passport fees
 And I review application 
 And I confirm that Familyname is same as in test data sheet
@@ -29,4 +28,4 @@ And I confirm that passport type is "Australian passport"
 And I confirm that fee type is "10 year passport"
 And I confirm fee amount "$325.00"
 And I click Next
-Then I can confirm that PC1 applicaiton is launched successfully
+Then I can confirm that PC7 applicaiton is launched successfully

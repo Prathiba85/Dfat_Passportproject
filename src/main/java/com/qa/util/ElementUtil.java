@@ -32,9 +32,10 @@ public class ElementUtil {
 		act = new Actions(driver);
 
 	}
-	//*******************************Main Functions called in test Steps***********************************//
+	// *******************************Main Functions called in test
+	// Steps***********************************//
 	// ******************TextBox*******************************//
-	
+
 	public void doSendKeys(By locator, String value) {
 		WebElement ele = getElement(locator);
 		waitForElementToBeClickable(locator).sendKeys(value);
@@ -75,7 +76,7 @@ public class ElementUtil {
 
 	}
 
-	public void clickelementtoValidate(By locator, By locator2) {
+	public void clickelementtoValidate(By locator) {
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
@@ -83,7 +84,7 @@ public class ElementUtil {
 			e.printStackTrace();
 		}
 
-		StaleElementforvalidatebutton(locator, locator2);
+		StaleElementforvalidatebutton(locator);
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
@@ -94,7 +95,7 @@ public class ElementUtil {
 	}
 
 	// Checkbox
-	
+
 	public void clickElementbyJavaScriptExecutorCheckStaleElement(By locator) {
 		try {
 			Thread.sleep(1000);
@@ -209,18 +210,18 @@ public class ElementUtil {
 
 	}
 
-	public void StaleElementforvalidatebutton(By locator, By locator2) {
+	public void StaleElementforvalidatebutton(By locator) {
 
 		String ValidationText;
 		waitForElementToBeClickable(locator);
 		WebElement ele = getElement(locator);
 		ValidationText = ele.getText();
-	//	System.out.println("Validation Text  Before Click " + ValidationText);
+		// System.out.println("Validation Text Before Click " + ValidationText);
 		clickElementByJSlocator(locator);
 
-		//System.out.println("Validation Text After  " + ValidationText);
+		// System.out.println("Validation Text After " + ValidationText);
 
-			}
+	}
 
 	public WebElement waitForElementToBeClickable(By locator) {
 		return new WebDriverWait(driver, 30).ignoring(StaleElementReferenceException.class)
@@ -228,11 +229,33 @@ public class ElementUtil {
 	}
 
 	public String doGetText(By locator) {
-		return getElement(locator).getText();
+		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		String text = null;
+		int textlength = 0;
+		int count = 0;
+		
+		
+		do {
+			try
+			{
+			//waitForElementVisible(locator,60);
+			text = getElement(locator).getText();
+			textlength = text.length();
+			count++;
+		
+		}
+		catch (NoSuchElementException e)
+		{
+			text = getElement(locator).getText();
+			textlength = text.length();
+		} 
+		}while ((textlength == 0) && (count < 10));
+		
+		return text;
 	}
 
 	public void StaleElementHandleBylocator(By locator, String value) {
-		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+		// driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 		WebElement element;
 		element = getElement(locator);
 		int count = 0;
@@ -252,7 +275,6 @@ public class ElementUtil {
 			} catch (UnhandledAlertException e) {
 				waitForElementToBeClickable(locator);
 				element = getElement(locator);
-				element.clear();
 				element.sendKeys(value);
 				element.sendKeys(Keys.ARROW_DOWN);
 				element.sendKeys(Keys.ENTER);
@@ -262,7 +284,6 @@ public class ElementUtil {
 			} catch (ElementNotInteractableException e) {
 				waitForElementToBeClickable(locator);
 				element = getElement(locator);
-				element.clear();
 				element.sendKeys(value);
 				element.sendKeys(Keys.ARROW_DOWN);
 				element.sendKeys(Keys.ENTER);
@@ -272,7 +293,6 @@ public class ElementUtil {
 			} catch (NoSuchElementException e) {
 				waitForElementToBeClickable(locator);
 				element = getElement(locator);
-				element.clear();
 				element.sendKeys(value);
 				element.sendKeys(Keys.ARROW_DOWN);
 				element.sendKeys(Keys.ENTER);
@@ -282,7 +302,6 @@ public class ElementUtil {
 			} catch (Exception e) {
 				waitForElementToBeClickable(locator);
 				element = getElement(locator);
-				element.clear();
 				element.sendKeys(value);
 				element.sendKeys(Keys.ARROW_DOWN);
 				element.sendKeys(Keys.ENTER);
@@ -396,7 +415,7 @@ public class ElementUtil {
 			waitForElementToBeClickable(locator);
 			List<WebElement> optionsList = getElements(locator);
 
-			//System.out.println(optionsList.size());
+			// System.out.println(optionsList.size());
 
 			for (WebElement e : optionsList) {
 				String text = e.getText();
@@ -483,10 +502,9 @@ public class ElementUtil {
 
 	public void StaleElementCheckForcheckbox(By locator) {
 		WebElement element;
-		
+
 		int count = 0;
 		boolean status = false;
-	
 
 		while ((count < 10) && ((status == false))) {
 			try {

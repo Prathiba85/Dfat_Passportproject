@@ -44,18 +44,18 @@ public class ContactDetailsPage {
 	private By chk_AlternateContactNumber = By.xpath("//input[@id='Q526-A2918']");
 	private By btn_NextPage = By.xpath("//input[@id='btnNextBottom']");
 
-	public PreviousPassportPage enterContactDetails() {
+	public void enterContactDetails() {
 		//eleUtil.scrollToElementbyJavaScriptExecutor(chk_NoMatch);
 		eleUtil.clickElementbyJavaScriptExecutorCheckStaleElement(chk_NoMatch);
 		
-		eleUtil.doSendKeysWithWaitCheckStaleElementException(txt_AddressLine1, exutil.getTestData("RESEDENTIALADDRESSINE1"));
+		eleUtil.doSendKeysWithWaitCheckStaleElementException(txt_AddressLine1, "44 Sydney Ave");
 		eleUtil.scrollToElementbyJavaScriptExecutor(txt_Suburb);
 		
-		eleUtil.doSendKeysWithWaitCheckStaleElementException(txt_Suburb, exutil.getTestData("SUBURB"));
+		eleUtil.doSendKeysWithWaitCheckStaleElementException(txt_Suburb,"Forrest");
 		
-		eleUtil.doSelectValueFromDropDown(txt_StateTerritory, exutil.getTestData("STATE"));
+		eleUtil.doSelectValueFromDropDown(txt_StateTerritory, "ACT");
 		
-		eleUtil.doSendKeysWithWaitCheckStaleElementException(txt_PostCode, exutil.getTestData("POSTCODE"));
+		eleUtil.doSendKeysWithWaitCheckStaleElementException(txt_PostCode,"2603");
 		
 		eleUtil.clickradiobutton(chk_DeliveryAddress);
 		
@@ -67,7 +67,7 @@ public class ContactDetailsPage {
 	
 		eleUtil.clickelement(btn_NextPage);
 		
-		return new PreviousPassportPage(driver);
+		//return new PreviousPassportPage(driver);
 		
 	}
 }
