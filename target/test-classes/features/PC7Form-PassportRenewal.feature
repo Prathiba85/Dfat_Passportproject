@@ -1,4 +1,4 @@
-Feature: This feature will allow you to create checklist for PC1 applicaiton. 
+Feature: This feature will allow you to create checklist for PC7 applicaiton. 
 Background: 
 Given I enter valid username as "sanprathi@gmail.com" and password as "Vimalprabhu-202310" 
 When I click login 
