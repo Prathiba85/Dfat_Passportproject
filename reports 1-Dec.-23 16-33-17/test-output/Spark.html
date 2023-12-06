@@ -1,0 +1,973 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>APO Automation Test Report</title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@c952cc003431b643d7a73337421ff42b75bac784/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa bdd-report dark">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">APO Regression Test Report</span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Dec. 1, 2023 04:33:17 pm</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('category-view')">
+<a id="nav-category" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-tag"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Dec. 1, 2023 04:33:17 pm</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Dec. 1, 2023 04:40:05 pm</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Features Passed</p>
+<h3>2</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Features Failed</p>
+<h3>1</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Features</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='66%'>
+<b>2</b> features passed
+</small>
+</div>
+<div>
+<small data-tooltip='33%'><b>1</b> features failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Scenarios</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='child-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='66%'><b>2</b> scenarios passed</small></div>
+<div>
+<small data-tooltip='33%'><b>1</b> scenarios failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Steps</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='grandchild-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='83%'><b>67</b> steps passed</small></div>
+<div>
+<small data-tooltip='1%'><b>1</b> steps failed,
+<b>12</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"This feature will allow you to create checklist for PC1 applicaiton with Birth Certificate as supporting document.":181.7,"This feature will allow you to create checklist for PC1 applicaiton with Citizenship certificate as supporting document.":169.845,"This feature will create checklist for PC7 applicaiton.":56.29
+};
+</script>
+<div class="row">
+<div class="col-lg-6 col-md-12 category-container">
+<div class="card">
+<div class="card-header"><p>Tags</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
+<tr>
+<td>@tag1</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>66.667%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="col-lg-6 col-md-12 sysenv-container">
+<div class="card">
+<div class="card-header"><p>System/Environment</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Value</th></tr></thead>
+<tbody>
+<tr>
+<td>AppName</td>
+<td>Passports</td>
+</tr>
+<tr>
+<td>user</td>
+<td>Prathiba</td>
+</tr>
+<tr>
+<td>OrganisationName</td>
+<td>DFAT</td>
+</tr>
+<tr>
+<td>Project</td>
+<td>Passports_BAU</td>
+</tr>
+<tr>
+<td>build</td>
+<td>1.1</td>
+</tr>
+<tr>
+<td>os</td>
+<td>Windows</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 2,
+failParent: 1,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 2,
+failChild: 1,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 67,
+failGrandChild: 1,
+warningGrandChild: 0,
+skipGrandChild: 12,
+infoGrandChild: 0,
+eventsCount: 5,
+};
+</script><div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
+<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">@tag1</a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="pass" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">This feature will allow you to create checklist for PC1 applicaiton with Birth Certificate as supporting document.</p>
+            <p class="text-sm">
+              <span>16:33:17 pm</span> / <span>00:03:01:700</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">This feature will allow you to create checklist for PC1 applicaiton with Birth Certificate as supporting document.</h5>
+<span class='badge badge-success'>12.01.2023 16:33:17</span>
+<span class='badge badge-danger'>12.01.2023 16:36:19</span>
+<span class='badge badge-default'>00:03:01:700</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Generate PC1 application with Birth Certificate as supporting document.</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_enter_valid_username_as_and_password_as(java.lang.String,java.lang.String)">
+                <span>Given I enter valid username as "sanprathi@gmail.com" and password as "Vimalprabhu-202310"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_click_login()">
+                <span>When I click login</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.user_is_logged_in_Successfully()">
+                <span>Then user is logged in Successfully</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_click_Start_renewal_passport()">
+                <span>Given I click Start renewal/passport</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_read_test_data_for_testcase_for(java.lang.String)">
+                <span>And I read test data for testcase for "PC1_BirthCertificate"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_select_logement_location_as(java.lang.String)">
+                <span>When I select logement location as "Australia"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_apply_for_a_application(java.lang.String)">
+                <span>And I apply for a "Adult" application</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_select_that_i_am_completing_the_application_for(java.lang.String)">
+                <span>And I select that I am completing the application for "Myself"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_enter_personal_details()">
+                <span>And I enter personal details</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_enter_contact_details()">
+                <span>And I enter contact details</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_enter_previous_passport_details()">
+                <span>And I enter previous passport details</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_choose_do_you_have_australian_birth_certificate_as(java.lang.String)">
+                <span>And I choose Do you have Australian Birth Certificate as "Yes"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_choose_is_your_birth_certificate_is_an_extract_or_a_commemorative_certificate_as(java.lang.String)">
+                <span>And I choose Is your BirthCertificate is an extract or a commemorative Certificate as "No"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_choose_does_your_birth_certificate_show_your_parents_name_age_dob(java.lang.String)">
+                <span>And I choose Does your BirthCertificate show your parents name,age DOB "Yes"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_enter_birthcertificate_details()">
+                <span>And I enter Birthcertificate details</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_choose_do_you_have_an_austraial_citizenship_certificate_as(java.lang.String)">
+                <span>And I choose Do you have an Austraial Citizenship Certificate as "Yes"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_enter_citizenshipdetails()">
+                <span>And I enter Citizenshipdetails</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_confirm_identity()">
+                <span>And I confirm Identity</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_confirm_referee_details()">
+                <span>And I confirm Referee details</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_enter_emergency_contact_details()">
+                <span>And I enter Emergency contact details</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_confirm_passport_fees(java.lang.String)">
+                <span>And I confirm Passport fees "A$325.00"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_review_application()">
+                <span>And I review application</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_can_confirm_that_pc1_applicaiton_is_launched_successfully()">
+                <span>Then I can confirm that PC1 applicaiton is launched successfully</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER">
+                <span>AppHooks.Hooks.teardownandScreenshot(io.cucumber.java.Scenario)</span>
+      <div>_G_e_n_e_r_a_t_e_ _P_C_1_ _a_p_p_l_i_c_a_t_i_o_n_ _w_i_t_h_ _B_i_r_t_h_ _C_e_r_t_i_f_i_c_a_t_e_ _a_s_ _s_u_p_p_o_r_t_i_n_g_ _d_o_c_u_m_e_n_t_._
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../screenshots/embedded1.png' src="../screenshots/embedded1.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="30"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">This feature will allow you to create checklist for PC1 applicaiton with Citizenship certificate as supporting document.</p>
+            <p class="text-sm">
+              <span>16:36:19 pm</span> / <span>00:02:49:845</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">This feature will allow you to create checklist for PC1 applicaiton with Citizenship certificate as supporting document.</h5>
+<span class='badge badge-success'>12.01.2023 16:36:19</span>
+<span class='badge badge-danger'>12.01.2023 16:39:09</span>
+<span class='badge badge-default'>00:02:49:845</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=30</span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="31"><span class="badge log pass-bg mr-2">Pass</span>Successful Login with Valid Credentials</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_enter_valid_username_as_and_password_as(java.lang.String,java.lang.String)">
+                <span>Given I enter valid username as "sanprathi@gmail.com" and password as "Vimalprabhu-202310"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_click_login()">
+                <span>When I click login</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.user_is_logged_in_Successfully()">
+                <span>Then user is logged in Successfully</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_click_Start_renewal_passport()">
+                <span>Given I click Start renewal/passport</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_read_test_data_for_testcase_for(java.lang.String)">
+                <span>And I read test data for testcase for "PC1_CitizenshipCertificate"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_select_logement_location_as(java.lang.String)">
+                <span>When I select logement location as "Australia"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_apply_for_a_application(java.lang.String)">
+                <span>And I apply for a "Adult" application</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_select_that_i_am_completing_the_application_for(java.lang.String)">
+                <span>And I select that I am completing the application for "Myself"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_enter_personal_details()">
+                <span>And I enter personal details</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_enter_contact_details()">
+                <span>And I enter contact details</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_enter_previous_passport_details()">
+                <span>And I enter previous passport details</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_choose_do_you_have_australian_birth_certificate_as(java.lang.String)">
+                <span>And I choose Do you have Australian Birth Certificate as "No"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_choose_do_you_have_an_austraial_citizenship_certificate_as(java.lang.String)">
+                <span>And I choose Do you have an Austraial Citizenship Certificate as "Yes"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_enter_citizenshipdetails()">
+                <span>And I enter Citizenshipdetails</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_confirm_identity()">
+                <span>And I confirm Identity</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_confirm_referee_details()">
+                <span>And I confirm Referee details</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_enter_emergency_contact_details()">
+                <span>And I enter Emergency contact details</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_confirm_passport_fees(java.lang.String)">
+                <span>And I confirm Passport fees "A$325.00"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_review_application()">
+                <span>And I review application</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_confirm_that_familyname_is_same_as_in_test_data_sheet()">
+                <span>And I confirm that Familyname is same as in test data sheet</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_confirm_givennames_is_same_as_in_test_data_sheet()">
+                <span>And I confirm Givennames is same as in test data sheet</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_confirm_date_of_birth_is_same_as_in_test_data_sheet()">
+                <span>And I confirm Date of Birth is  same as in test data sheet</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_confirm_that_passport_type_is(java.lang.String)">
+                <span>And I confirm that passport type is "Australian passport"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_confirm_that_fee_type_is(java.lang.String)">
+                <span>And I confirm that fee type is "10 year passport"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_confirm_fee_amount(java.lang.String)">
+                <span>And I confirm fee amount "$325.00"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_click_next()">
+                <span>And I click Next</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_can_confirm_that_pc1_applicaiton_is_launched_successfully()">
+                <span>Then I can confirm that PC1 applicaiton is launched successfully</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER">
+                <span>AppHooks.Hooks.teardownandScreenshot(io.cucumber.java.Scenario)</span>
+      <div>_S_u_c_c_e_s_s_f_u_l_ _L_o_g_i_n_ _w_i_t_h_ _V_a_l_i_d_ _C_r_e_d_e_n_t_i_a_l_s_
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../screenshots/embedded2.png' src="../screenshots/embedded2.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="63"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">This feature will create checklist for PC7 applicaiton.</p>
+            <p class="text-sm">
+              <span>16:39:09 pm</span> / <span>00:00:56:290</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">This feature will create checklist for PC7 applicaiton.</h5>
+<span class='badge badge-success'>12.01.2023 16:39:09</span>
+<span class='badge badge-danger'>12.01.2023 16:40:05</span>
+<span class='badge badge-default'>00:00:56:290</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=63</span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="64"><span class="badge log fail-bg mr-2">Fail</span>Successful Login with Valid Credentials</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_enter_valid_username_as_and_password_as(java.lang.String,java.lang.String)">
+                <span>Given I enter valid username as "sanprathi@gmail.com" and password as "Vimalprabhu-202310"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_click_login()">
+                <span>When I click login</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.user_is_logged_in_Successfully()">
+                <span>Then user is logged in Successfully</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_click_Start_renewal_passport()">
+                <span>Given I click Start renewal/passport</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_read_test_data_for_testcase_for(java.lang.String)">
+                <span>And I read test data for testcase for "PC_PassportRenewal"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_select_logement_location_as(java.lang.String)">
+                <span>When I select logement location as "Australia"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_apply_for_a_application(java.lang.String)">
+                <span>And I apply for a "Adult" application</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_select_that_i_am_completing_the_application_for(java.lang.String)">
+                <span>And I select that I am completing the application for "Myself"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_enter_personal_details()">
+                <span>And I enter personal details</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_enter_contact_details()">
+                <span>And I enter contact details</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_enter_have_you_had_a_australian_passport_as(java.lang.String)">
+                <span>And I enter Have you had a Australian Passport as "Yes"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_enter_are_you_able_to_present_your_most_recently_issued_passport_as(java.lang.String)">
+                <span>And I enter Are you able to present your most recently issued passport as "Yes"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.OPASStepDefinition.i_enter_are_you_applying_for_data_breach_as(java.lang.String)">
+                <span>And I enter Are you applying for data breach as "No"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="stepdefinitions.OPASStepDefinition.i_enter_previous_passport_details_as_per_spreadsheet()">
+                <span>And I enter previous passport details as per spreadsheet</span>
+      <div>
+        <textarea disabled class="code-block">java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:97)
+	at com.qa.util.ElementUtil.StaleElementHandleBylocator(ElementUtil.java:329)
+	at com.qa.util.ElementUtil.doSendKeysWithWaitCheckStaleElementException(ElementUtil.java:54)
+	at com.pages.PreviousPassportPage.enterPreviousPassportdetails(PreviousPassportPage.java:107)
+	at stepdefinitions.OPASStepDefinition.i_enter_previous_passport_details_as_per_spreadsheet(OPASStepDefinition.java:214)
+	at ✽.I enter previous passport details as per spreadsheet(file:///C:/Users/sanpr/exlipsefolder2/DFAT_PassportProject/src/test/resources/features/PC7Form-PassportRenewal.feature:19)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.OPASStepDefinition.i_enter_emergency_contact_details()">
+                <span>And I enter Emergency contact details</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.OPASStepDefinition.if_referee_page_is_available_click_next()">
+                <span>And if Referee Page is available click next</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.OPASStepDefinition.i_confirm_passport_fees(java.lang.String)">
+                <span>And I confirm Passport fees "A$325.00"</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.OPASStepDefinition.i_review_application()">
+                <span>And I review application</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.OPASStepDefinition.i_confirm_that_familyname_is_same_as_in_test_data_sheet()">
+                <span>And I confirm that Familyname is same as in test data sheet</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.OPASStepDefinition.i_confirm_givennames_is_same_as_in_test_data_sheet()">
+                <span>And I confirm Givennames is same as in test data sheet</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.OPASStepDefinition.i_confirm_date_of_birth_is_same_as_in_test_data_sheet()">
+                <span>And I confirm Date of Birth is  same as in test data sheet</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.OPASStepDefinition.i_confirm_that_passport_type_is(java.lang.String)">
+                <span>And I confirm that passport type is "Australian passport"</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.OPASStepDefinition.i_confirm_that_fee_type_is(java.lang.String)">
+                <span>And I confirm that fee type is "10 year passport"</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.OPASStepDefinition.i_confirm_fee_amount(java.lang.String)">
+                <span>And I confirm fee amount "$325.00"</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.OPASStepDefinition.i_click_next()">
+                <span>And I click Next</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.OPASStepDefinition.i_can_confirm_that_pc7_applicaiton_is_launched_successfully()">
+                <span>Then I can confirm that PC7 applicaiton is launched successfully</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER">
+                <span>AppHooks.Hooks.teardown(io.cucumber.java.Scenario)</span>
+      <div>_S_u_c_c_e_s_s_f_u_l_ _L_o_g_i_n_ _w_i_t_h_ _V_a_l_i_d_ _C_r_e_d_e_n_t_i_a_l_s_
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../screenshots/embedded3.png' src="../screenshots/embedded3.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER">
+                <span>AppHooks.Hooks.teardownandScreenshot(io.cucumber.java.Scenario)</span>
+      <div>_S_u_c_c_e_s_s_f_u_l_ _L_o_g_i_n_ _w_i_t_h_ _V_a_l_i_d_ _C_r_e_d_e_n_t_i_a_l_s_
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../screenshots/embedded4.png' src="../screenshots/embedded4.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="test-wrapper row view category-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>2</span>
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">@tag1</p>
+<p class="duration text-sm">3 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@tag1</h4>
+<span status="pass" class='badge log pass-bg'>2 passed</span>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:33:17 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>Generate PC1 application with Birth Certificate as supporting document.</a>
+<div class="">
+<span class="badge badge-default">This feature will allow you to create checklist for PC1 applicaiton with Birth Certificate as supporting document..Generate PC1 application with Birth Certificate as supporting document.</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:36:19 pm</td>
+<td>
+<a href="#" class="linked" test-id='30' id='31'>Successful Login with Valid Credentials</a>
+<div class="">
+<span class="badge badge-default">This feature will allow you to create checklist for PC1 applicaiton with Citizenship certificate as supporting document..Successful Login with Valid Credentials</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>16:39:09 pm</td>
+<td>
+<a href="#" class="linked" test-id='63' id='64'>Successful Login with Valid Credentials</a>
+<div class="">
+<span class="badge badge-default">This feature will create checklist for PC7 applicaiton..Successful Login with Valid Credentials</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="test-wrapper row view exception-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">java.lang.IllegalArgumentException</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>java.lang.IllegalArgumentException</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>16:39:55 pm</td>
+<td>
+<a href="#" class="linked" test-id='63' id='80'>And I enter previous passport details as per spreadsheet</a>
+<div class="">
+<span class="badge badge-default">This feature will create checklist for PC7 applicaiton..Successful Login with Valid Credentials.And I enter previous passport details as per spreadsheet</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div>        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@14e9bb345ef7e2ed3a102f271d84e9f0267c88e7/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>

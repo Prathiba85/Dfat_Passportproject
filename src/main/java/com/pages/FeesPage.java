@@ -14,9 +14,7 @@ import org.openqa.selenium.support.ui.Select;
 import com.qa.util.ElementUtil;
 import com.qa.util.ExcelUtil;
 
-
-
-public class FeesPage  {
+public class FeesPage {
 	private WebDriver driver;
 	private ElementUtil eleUtil;
 	private ExcelUtil exutil;
@@ -27,36 +25,47 @@ public class FeesPage  {
 		exutil = new ExcelUtil();
 
 	}
+
 	private By txt_fees = By.xpath("//div[@class='fee-option-content']//div[contains(text(),'A$')]");
 	private By btn_NextPage = By.xpath("//input[@id='btnNextBottom']");
-	
+
 	private By lnk_PassporttypeandFees = By.xpath("//a[text()='Passport type and fees']");
 
+	private By Sec_PassportFees = By.xpath("//a[text()='Passport type and fees']");
 
+	// span[@class='fee-option-header-content']
 	public String getfees() {
-		
-		//eleUtil.scrollToElementbyJavaScriptExecutor(txt_fees);
-		
-		
-		String passport_fees =  eleUtil.doGetText(txt_fees);
-		System.out.println("Fee details from fee page "+passport_fees);
-		
-		
+
+		// eleUtil.scrollToElementbyJavaScriptExecutor(txt_fees);
+
+		eleUtil.clickelement(lnk_PassporttypeandFees);
+		String passport_fees = eleUtil.doGetText(txt_fees);
+		System.out.println("Fee details from fee page " + passport_fees);
+
 		return passport_fees;
 	}
-	
-	public void clicknext()
-	{
-	
-		eleUtil.clickelement(lnk_PassporttypeandFees);
-		
+
+	public boolean checkfeeSection() {
+		int size = eleUtil.getNumberofElements(Sec_PassportFees);
+
+		if (size == 1) {
+			return true;
+		} else {
+			return false;
+
+		}
+
+	}
+
+	public void clicknext() {
+
 		eleUtil.clickelement(btn_NextPage);
 	}
-	public void markTestDataasUsed()
-	{
+
+	public void markTestDataasUsed() {
 		System.out.println(exutil.getTestData("TestDataID"));
-		String TestDataID=exutil.getTestData("TestDataID");
-		
+		String TestDataID = exutil.getTestData("TestDataID");
+
 	}
 
 }

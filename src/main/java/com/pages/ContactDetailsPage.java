@@ -15,7 +15,6 @@ import org.slf4j.Logger;
 import com.qa.util.ElementUtil;
 import com.qa.util.ExcelUtil;
 
-
 public class ContactDetailsPage {
 
 	private WebDriver driver;
@@ -44,30 +43,71 @@ public class ContactDetailsPage {
 	private By chk_AlternateContactNumber = By.xpath("//input[@id='Q526-A2918']");
 	private By btn_NextPage = By.xpath("//input[@id='btnNextBottom']");
 
+//	page objects for error
+
+	private By Allerror = By.xpath("//span[contains(@id,'error')]");
+	private By error_AddressLine1 = By.xpath("//span[contains(@id,'Q44')and @class='wrn']");
+	private By error_Suburb = By.xpath("//span[contains(@id,'Q17')and @class='wrn']");
+
+	private By error_State = By.xpath("//span[contains(@id,'Q19')and @class='wrn']");
+	private By error_Postcode = By.xpath("//span[contains(@id,'Q20')and @class='wrn']");
+	private By error_DeliveryAddress = By.xpath("//span[contains(@id,'Q311-A403')and @class='wrn']");
+	private By error_Mobilenumber = By.xpath("//span[contains(@id,'Q14')and @class='wrn']");
+
 	public void enterContactDetails() {
 		//eleUtil.scrollToElementbyJavaScriptExecutor(chk_NoMatch);
 		eleUtil.clickElementbyJavaScriptExecutorCheckStaleElement(chk_NoMatch);
-		
+
 		eleUtil.doSendKeysWithWaitCheckStaleElementException(txt_AddressLine1, "44 Sydney Ave");
 		eleUtil.scrollToElementbyJavaScriptExecutor(txt_Suburb);
-		
-		eleUtil.doSendKeysWithWaitCheckStaleElementException(txt_Suburb,"Forrest");
-		
+
+		eleUtil.doSendKeysWithWaitCheckStaleElementException(txt_Suburb, "Forrest");
+
 		eleUtil.doSelectValueFromDropDown(txt_StateTerritory, "ACT");
-		
-		eleUtil.doSendKeysWithWaitCheckStaleElementException(txt_PostCode,"2603");
-		
+
+		eleUtil.doSendKeysWithWaitCheckStaleElementException(txt_PostCode, "2603");
+
 		eleUtil.clickradiobutton(chk_DeliveryAddress);
-		
-		//eleUtil.scrollToElementbyJavaScriptExecutor(chk_MobileNumber);
+
 		eleUtil.doSendKeysWithWaitCheckStaleElementException(chk_MobileNumber, "0433002845");
-		
-		
-		//eleUtil.scrollToElementbyJavaScriptExecutor(btn_NextPage);
-	
+
+		//checkAlertmessage();
+
 		eleUtil.clickelement(btn_NextPage);
-		
-		//return new PreviousPassportPage(driver);
-		
+
 	}
+
+	public void checkAlertmessage() {
+		//while ((eleUtil.Alertsize(Allerror) > 0)) {
+
+			if (eleUtil.isErrorDisplayedInElement(error_AddressLine1) == true) {
+				eleUtil.doSendKeysWithWaitCheckStaleElementException(txt_AddressLine1, "44 Sydney Ave");
+
+			}
+
+			if (eleUtil.isErrorDisplayedInElement(error_Suburb) == true) {
+				eleUtil.scrollToElementbyJavaScriptExecutor(txt_Suburb);
+				eleUtil.doSendKeysWithWaitCheckStaleElementException(txt_Suburb, "Forrest");
+			}
+
+			if (eleUtil.isErrorDisplayedInElement(error_State) == true) {
+				eleUtil.doSelectValueFromDropDown(txt_StateTerritory, "ACT");
+			}
+
+			if (eleUtil.isErrorDisplayedInElement(error_Postcode) == true) {
+				eleUtil.doSendKeysWithWaitCheckStaleElementException(txt_PostCode, "2603");
+
+			}
+
+			if (eleUtil.isErrorDisplayedInElement(error_DeliveryAddress) == true) {
+				eleUtil.clickradiobutton(chk_DeliveryAddress);
+
+			}
+			if (eleUtil.isErrorDisplayedInElement(error_Mobilenumber) == true) {
+				eleUtil.doSendKeysWithWaitCheckStaleElementException(chk_MobileNumber, "0433002845");
+
+			}
+
+		}
+	//}
 }

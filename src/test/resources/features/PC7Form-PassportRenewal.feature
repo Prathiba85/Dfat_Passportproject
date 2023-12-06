@@ -1,4 +1,4 @@
-Feature: This feature will allow you to create checklist for PC7 applicaiton. 
+Feature: This feature will create checklist for PC7 applicaiton. 
 Background: 
 Given I enter valid username as "sanprathi@gmail.com" and password as "Vimalprabhu-202310" 
 When I click login 
@@ -19,7 +19,7 @@ And I enter Are you applying for data breach as "No"
 And I enter previous passport details as per spreadsheet
 And I enter Emergency contact details
 And if Referee Page is available click next
-And I confirm Passport fees
+And I confirm Passport fees "A$325.00"
 And I review application 
 And I confirm that Familyname is same as in test data sheet
 And I confirm Givennames is same as in test data sheet

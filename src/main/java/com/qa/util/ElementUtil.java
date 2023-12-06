@@ -45,14 +45,21 @@ public class ElementUtil {
 	// do sendKeys with wait checkstaleElement
 	public void doSendKeysWithWaitCheckStaleElementException(By locator, String value) {
 		try {
-			Thread.sleep(1500);
+			Thread.sleep(1000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 		StaleElementHandleBylocator(locator, value);
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
-		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+		
 
 	}
 
@@ -65,14 +72,15 @@ public class ElementUtil {
 	}
 
 	public void clickelement(By locator) {
-		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
-		StaleElementforClickablebutton(locator);
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		StaleElementforClickablebutton(locator);
+		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+		
 
 	}
 
@@ -85,12 +93,14 @@ public class ElementUtil {
 		}
 
 		StaleElementforvalidatebutton(locator);
+		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 
 	}
 
@@ -112,7 +122,7 @@ public class ElementUtil {
 	// Radio Button
 	public void clickradiobutton(By locator) {
 		try {
-			Thread.sleep(1500);
+			Thread.sleep(1000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -125,15 +135,29 @@ public class ElementUtil {
 
 	// scroll
 	public void scrollToElementbyJavaScriptExecutor(By locator) {
-		try {
-			Thread.sleep(1500);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
 		StaleElementCheckForScrollToElement(locator);
 		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 
+	}
+	public int getNumberofElements(By errorlocator)
+	{
+		List <WebElement> ele =  getElements(errorlocator);
+		
+		
+		return ele.size();
+	}
+	
+	public boolean isErrorDisplayedInElement(By errorlocator)
+	{
+		List <WebElement> ele =  getElements(errorlocator);
+		
+		System.out.println("Size of the element missing "+ele.size());
+		if (ele.size()>0)
+		{
+			return true;
+		}
+		return false;
 	}
 
 //Waits
@@ -212,10 +236,8 @@ public class ElementUtil {
 
 	public void StaleElementforvalidatebutton(By locator) {
 
-		String ValidationText;
-		waitForElementToBeClickable(locator);
-		WebElement ele = getElement(locator);
-		ValidationText = ele.getText();
+		
+		
 		// System.out.println("Validation Text Before Click " + ValidationText);
 		clickElementByJSlocator(locator);
 
@@ -229,28 +251,30 @@ public class ElementUtil {
 	}
 
 	public String doGetText(By locator) {
-		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		// driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		String text = null;
 		int textlength = 0;
 		int count = 0;
-		
-		
+
 		do {
-			try
-			{
-			//waitForElementVisible(locator,60);
-			text = getElement(locator).getText();
-			textlength = text.length();
-			count++;
-		
-		}
-		catch (NoSuchElementException e)
-		{
-			text = getElement(locator).getText();
-			textlength = text.length();
-		} 
-		}while ((textlength == 0) && (count < 10));
-		
+			try {
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				// waitForElementVisible(locator,60);
+				text = getElement(locator).getText();
+				textlength = text.length();
+				count++;
+
+			} catch (NoSuchElementException e) {
+				text = getElement(locator).getText();
+				textlength = text.length();
+			}
+		} while ((textlength == 0) && (count < 10));
+
 		return text;
 	}
 
@@ -269,7 +293,7 @@ public class ElementUtil {
 				element.sendKeys(value);
 				element.sendKeys(Keys.ARROW_DOWN);
 				element.sendKeys(Keys.ENTER);
-				driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+			
 				textentered = element.getText();
 
 			} catch (UnhandledAlertException e) {
@@ -278,7 +302,7 @@ public class ElementUtil {
 				element.sendKeys(value);
 				element.sendKeys(Keys.ARROW_DOWN);
 				element.sendKeys(Keys.ENTER);
-				driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+				
 				textentered = element.getText();
 
 			} catch (ElementNotInteractableException e) {
@@ -287,7 +311,7 @@ public class ElementUtil {
 				element.sendKeys(value);
 				element.sendKeys(Keys.ARROW_DOWN);
 				element.sendKeys(Keys.ENTER);
-				driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+				
 				textentered = element.getText();
 
 			} catch (NoSuchElementException e) {
@@ -296,7 +320,7 @@ public class ElementUtil {
 				element.sendKeys(value);
 				element.sendKeys(Keys.ARROW_DOWN);
 				element.sendKeys(Keys.ENTER);
-				driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+				
 				textentered = element.getText();
 
 			} catch (Exception e) {
@@ -305,12 +329,12 @@ public class ElementUtil {
 				element.sendKeys(value);
 				element.sendKeys(Keys.ARROW_DOWN);
 				element.sendKeys(Keys.ENTER);
-				driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+				
 				textentered = element.getText();
 
 			}
 			count = count + 1;
-			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			// System.out.println("textentered" + textentered);
 			// System.out.println("textentered length " + textentered.trim().isEmpty());
 
@@ -409,7 +433,7 @@ public class ElementUtil {
 	}
 
 	public void doSelectValueFromDropDown(By locator, String value) {
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+
 		try {
 			Thread.sleep(1000);
 			waitForElementToBeClickable(locator);
@@ -442,7 +466,13 @@ public class ElementUtil {
 
 			}
 		}
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		// driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 	}
 
 	// wait
@@ -456,12 +486,12 @@ public class ElementUtil {
 
 	}
 
-	public boolean isAlertpresent() {
-		List<WebElement> requiredfield = driver.findElements(By.xpath("//span[text()=' This is a required field']"));
-		if (requiredfield.size() > 0) {
-			return true;
-		}
-		return false;
+	public int Alertsize(By locator) {
+		List<WebElement> AlertPresent = getElements(locator);
+		
+			System.out.println("Alert Size"+AlertPresent.size());
+			
+		return AlertPresent.size();
 	}
 
 	public void entersendKeys(By locator, String value) {
@@ -536,7 +566,7 @@ public class ElementUtil {
 			}
 
 			count++;
-			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+			
 		}
 
 	}

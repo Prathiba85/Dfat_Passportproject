@@ -30,7 +30,7 @@ public class HomePage {
 	}
 
 	public void clickStartApplicaiton() {
-	
+		eleUtil.scrollToElementbyJavaScriptExecutor(lnk_StartApplication);
 		eleUtil.doClick(lnk_StartApplication);
 		
 	}

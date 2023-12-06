@@ -44,7 +44,9 @@ public class EmergencyContactPage  {
 	private By chk_MobileNumber = By.xpath("//input[contains(@name,'Q14')and @type='text']");
 
 	private By btn_NextPage = By.xpath("//input[@id='btnNextBottom']");
+	private By lnk_emergencycontactpage = By.xpath("//a[text()='Emergency contact details']");
 
+	
 
 	public void enterEmergencyContactDetails() {
 		
@@ -68,6 +70,12 @@ public class EmergencyContactPage  {
 		
 		eleUtil.clickelement(btn_NextPage);
 		
+	}
+
+
+	public void clickEmergencycontactpage() {
+	
+		eleUtil.clickelement(lnk_emergencycontactpage);
 	}
 
 }

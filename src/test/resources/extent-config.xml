@@ -17,10 +17,10 @@
 
 		<protocol>http</protocol>
 		<!-- title of the document -->
-		<documentTitle>Extent</documentTitle>
+		<documentTitle>APO Automation Test Report</documentTitle>
 		<!-- report name - displayed at top-nav -->
 
-		<reportName>Passport Regression Test Report</reportName>
+		<reportName>APO Regression Test Report</reportName>
 		<!-- location of charts in the test view -->
 
 		<!-- top, bottom -->

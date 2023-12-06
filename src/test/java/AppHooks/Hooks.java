@@ -40,7 +40,7 @@ public class Hooks {
 		driver = driverFactory.init_driver(browserName);
 		driver.manage().window().maximize();
 	}
-	/*
+	
 	@After(order = 0)
 	public void teardownandScreenshot(Scenario scenario)
 	{
@@ -62,9 +62,9 @@ public class Hooks {
 			byte[] sourcepath=((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
 			scenario.attach(sourcepath, "image/png", screenshotName);
 		}
-	}*/
+	}
 	
-	//The below code must be used for git push
+	/*The below code must be used for git push
 	@After(order = 0)
 	public void teardownandScreenshot()
 	{
@@ -75,6 +75,6 @@ public class Hooks {
 	public void teardown()
 	{
 		
-	}
+	}*/
 
 }

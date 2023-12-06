@@ -35,10 +35,9 @@ public class ReviewApplicationPage {
 	private By txt_FeeAmount = By.xpath("//span[text()='Fee amount']/following::span[1]");
 
 	private By btn_NextPage = By.xpath("//input[@id='btnNextBottom']");
-	
-	
+
 	private By lnk_reviewapplication = By.xpath("//a[text()='Review application']");
-	
+
 	private By btn_Back = By.xpath("//input[@value='Back']");
 
 	public String getActualFamilname() {
@@ -52,13 +51,13 @@ public class ReviewApplicationPage {
 		}
 		eleUtil.clickelement(lnk_reviewapplication);
 		String actualFamilyname = eleUtil.doGetText(txtFamilyname);
-		System.out.println("actualFamilyname"+actualFamilyname);
+		System.out.println("actualFamilyname" + actualFamilyname);
 		return actualFamilyname;
 
 	}
 
 	public String expectedFamilyname() {
-		
+
 		String ExpectedFamilyname = exutil.getTestData("FAMILYNAME");
 
 		return ExpectedFamilyname;
@@ -66,10 +65,10 @@ public class ReviewApplicationPage {
 
 	public String getActualGivennames() {
 
-		//eleUtil.scrollToElementbyJavaScriptExecutor(txtFamilyname);
+		// eleUtil.scrollToElementbyJavaScriptExecutor(txtFamilyname);
 
 		String actualFamilyname = eleUtil.doGetText(txtGivennames);
-		 System.out.println("Actual Given Name is "+actualFamilyname);
+		System.out.println("Actual Given Name is " + actualFamilyname);
 		return actualFamilyname;
 
 	}
@@ -85,7 +84,7 @@ public class ReviewApplicationPage {
 		// eleUtil.scrollToElementbyJavaScriptExecutor(txtFamilname);
 
 		String actualDOB = eleUtil.doGetText(txt_DOB);
-		 System.out.println("Actual DOB is "+actualDOB);
+		System.out.println("Actual DOB is " + actualDOB);
 		return actualDOB;
 
 	}
@@ -98,6 +97,12 @@ public class ReviewApplicationPage {
 
 	public String getActualPassportType() {
 
+		try {
+			Thread.sleep(1500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		String passportType = eleUtil.doGetText(txt_PassportType);
 
 		return passportType;
@@ -111,7 +116,7 @@ public class ReviewApplicationPage {
 		return actualfeeType;
 
 	}
-	
+
 	public String getActualFeeAmount() {
 
 		String actualfeeAmount = eleUtil.doGetText(txt_FeeAmount);
@@ -121,20 +126,19 @@ public class ReviewApplicationPage {
 	}
 
 	public void clicknext() {
-		
+
 		eleUtil.clickelement(lnk_reviewapplication);
 
 		eleUtil.clickelement(btn_NextPage);
-		
-		 try { System.out. println("**********************************Application Number is  *********************"+"S1475860"); 
-		 String ApplicaitonNumber = "S1475860";
-		exutil.insertGenerateFormNumber(ApplicaitonNumber); 
-		 } 
-		 catch (Exception e) {
-		 }
-		 
-		// return new ContactDetailsPage(driver);
-		
+
+		try {
+			System.out.println(
+					"**********************************Application Number is  *********************" + "S1475860");
+			String ApplicaitonNumber = "S1475860";
+			exutil.insertGenerateFormNumber(ApplicaitonNumber, exutil.getTestData("TestDataID"));
+		} catch (Exception e) {
+		}
+
 		eleUtil.clickelement(lnk_reviewapplication);
 	}
 

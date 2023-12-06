@@ -44,7 +44,7 @@ public class ConfirmingIdentityPage {
 			eleUtil.clickElementbyJavaScriptExecutorCheckStaleElement(chk_ProofOfAgePhotoCard);
 		}
 
-		eleUtil.doSelectValueFromDropDown(txt_StateTerritory, exutil.getTestData("STATE"));
+		eleUtil.doSelectValueFromDropDown(txt_StateTerritory, "ACT");
 
 	
 

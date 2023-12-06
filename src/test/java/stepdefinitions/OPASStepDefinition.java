@@ -63,6 +63,7 @@ public class OPASStepDefinition {
 
 	@Given("I click Start renewal\\/passport")
 	public void i_click_Start_renewal_passport() {
+		
 		homepage.clickStartApplicaiton();
 
 	}
@@ -86,6 +87,8 @@ public class OPASStepDefinition {
 		personalpage.clickNext();
 
 	}
+	
+	
 
 	@When("I select that I am completing the application for {string}")
 	public void i_select_that_i_am_completing_the_application_for(String Applicant) {
@@ -110,12 +113,12 @@ public class OPASStepDefinition {
 	@When("I enter previous passport details")
 	public void i_enter_previous_passport_details() {
 		citizenshippage = new ConfirmingCitizenshipPage(DriverFactory.getDriver());
-		citizenshippage = previouspassportpage.chooseHadAustralianPassport();
+		 previouspassportpage.chooseHadAustralianPassport();
 	}
 
 	@When("I choose Do you have Australian Birth Certificate as {string}")
-	public void i_choose_do_you_have_australian_birth_certificate_as(String string) {
-		citizenshippage.haveAustralianBirthCertificate("No");
+	public void i_choose_do_you_have_australian_birth_certificate_as(String ans) {
+		citizenshippage.haveAustralianBirthCertificate(ans);
 	}
 
 	@When("I choose Do you have an Austraial Citizenship Certificate as {string}")
@@ -153,23 +156,29 @@ public class OPASStepDefinition {
 	@When("I enter Emergency contact details")
 	public void i_enter_emergency_contact_details() {
 		emergencycontactpage = new EmergencyContactPage(DriverFactory.getDriver());
+		emergencycontactpage.clickEmergencycontactpage();
 		emergencycontactpage.enterEmergencyContactDetails();
 
 	}
 
-	@When("I confirm Passport fees")
-	public void i_confirm_passport_fees() {
-		FeesPage feepage = new FeesPage(DriverFactory.getDriver());
 	
-		//String actualfees = feepage.getfees();
-		//System.out.println("Actual fees "+actualfees);
-		feepage.clicknext();
+	
+	@When("I confirm Passport fees {string}")
+	public void i_confirm_passport_fees(String expectedfees) {
+		FeesPage feepage = new FeesPage(DriverFactory.getDriver());
 		
+		String actualfees = feepage.getfees();
+		System.out.println("Actual fees "+actualfees);
+		Assert.assertEquals(expectedfees,actualfees);
+		feepage.checkfeeSection();
+		feepage.clicknext();
+	    
 	}
+	
 	@When("if Referee Page is available click next")
 	public void if_referee_page_is_available_click_next() {
 		refereepage = new RefereePage(DriverFactory.getDriver());
-		refereepage.click_Next();
+		//refereepage.click_Next();
 	   
 	}
 	
@@ -263,5 +272,21 @@ public class OPASStepDefinition {
 	@Then("I can confirm that PC7 applicaiton is launched successfully")
 	public void i_can_confirm_that_pc7_applicaiton_is_launched_successfully() {
 		
+	}
+	@When("I choose Is your BirthCertificate is an extract or a commemorative Certificate as {string}")
+	public void i_choose_is_your_birth_certificate_is_an_extract_or_a_commemorative_certificate_as(String ans) {
+		citizenshippage.haveCommemorativeCertificate(ans);
+	
+	}
+
+	@When("I choose Does your BirthCertificate show your parents name,age DOB {string}")
+	public void i_choose_does_your_birth_certificate_show_your_parents_name_age_dob(String ans) {
+		citizenshippage.doBitrthCertificateShowParentsName(ans);
+	}
+
+	@When("I enter Birthcertificate details")
+	public void i_enter_birthcertificate_details() {
+		citizenshippage.enterBirthCertificateDetails();
+	   
 	}
 }

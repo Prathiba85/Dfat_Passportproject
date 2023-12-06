@@ -50,7 +50,16 @@ public class PersonalDetailsPage {
 	private By txt_DOB = By.xpath("//input[@id = 'Q42']");
 	private By txt_ParentsFamilyName = By.xpath("//input[@id='Q847']");
 	private By btn_NextPage = By.xpath("//input[@id='btnNextBottom']");
-
+//	page objects for error
+	
+	private By Allerror = By.xpath("//span[contains(@id,'error')]");
+	private By error_Familyname = By.xpath("//span[@id='error_Q37']");
+	private By error_Givenname = By.xpath("//span[@id='error_Q40']");
+	
+	private By error_sex = By.xpath("//span[@id='error_Q41-A54']");
+	private By error_COB = By.xpath("//span[@id='error_Q47']");
+	private By parent_Familyname = By.xpath("//span[@id='error_Q847']");
+	
 	// private By Alert = By.xpath("//span[text()=' This is a required field']");
 	public String getHomePageTitle() {
 		return eleUtil.doGetText(txt_Title);
@@ -99,6 +108,12 @@ public class PersonalDetailsPage {
 			exutil.setTestDataSheet(Sheetname);
 
 		}
+		
+		if (ApplicationType.equals("PC1_BirthCertificate")) {
+			String Sheetname = "PC1_BirthCertificate";
+			exutil.setTestDataSheet(Sheetname);
+
+		}
 
 	}
 
@@ -108,6 +123,20 @@ public class PersonalDetailsPage {
 
 		eleUtil.doSendKeysWithWaitCheckStaleElementException(txt_givennames, exutil.getTestData("GIVENNAMES"));
 
+		enterSex();
+
+		eleUtil.scrollPageDown();
+		eleUtil.doSendKeysWithWaitCheckStaleElementException(txt_DOB, exutil.getTestData("DOB"));
+		eleUtil.doSendKeysWithWaitCheckStaleElementException(txt_countryOfBirth, exutil.getTestData("COB"));
+		eleUtil.doSendKeysWithWaitCheckStaleElementException(txt_ParentsFamilyName, exutil.getTestData("FAMILYNAME"));
+		//checkAlertmessage();
+		eleUtil.clickelement(btn_NextPage);
+		
+
+	}
+	
+	public void enterSex()
+	{
 		String sex = exutil.getTestData("SEX");
 		if (sex.equals("M")) {
 			eleUtil.clickradiobutton(chk_persondetailsMale);
@@ -121,14 +150,46 @@ public class PersonalDetailsPage {
 			eleUtil.clickradiobutton(chk_persondetailsIntersex);
 
 		}
-
-		eleUtil.scrollPageDown();
-		eleUtil.doSendKeysWithWaitCheckStaleElementException(txt_DOB, exutil.getTestData("DOB"));
-		eleUtil.doSendKeysWithWaitCheckStaleElementException(txt_countryOfBirth, exutil.getTestData("COB"));
-		eleUtil.doSendKeysWithWaitCheckStaleElementException(txt_ParentsFamilyName, exutil.getTestData("FAMILYNAME"));
-		eleUtil.clickelement(btn_NextPage);
+	}
+	
+	public void checkAlertmessage()
+	{
+		while(eleUtil.Alertsize(Allerror)>1)
+		{
+			
 		
-
+		if (eleUtil.isErrorDisplayedInElement(error_Familyname)==true)
+		{
+			eleUtil.doSendKeysWithWaitCheckStaleElementException(txt_familyname, exutil.getTestData("FAMILYNAME"));
+			
+		}
+		
+		
+		
+		if (eleUtil.isErrorDisplayedInElement(error_Givenname)==true)
+		{
+			eleUtil.doSendKeysWithWaitCheckStaleElementException(txt_givennames, exutil.getTestData("GIVENNAMES"));
+			//eleUtil.doSendKeysWithWaitCheckStaleElementException(txt_givennames, "test");
+		}
+		
+		if (eleUtil.isErrorDisplayedInElement(error_sex)==true)
+		{
+			enterSex();
+		}
+		
+		if(eleUtil.isErrorDisplayedInElement(error_COB)==true)
+		{
+			eleUtil.doSendKeysWithWaitCheckStaleElementException(txt_countryOfBirth, exutil.getTestData("COB"));
+			
+		}
+		
+		
+		if(eleUtil.isErrorDisplayedInElement(parent_Familyname)==true)
+		{
+			eleUtil.doSendKeysWithWaitCheckStaleElementException(txt_ParentsFamilyName, exutil.getTestData("FAMILYNAME"));
+			
+		}
+		}
 	}
 
 }

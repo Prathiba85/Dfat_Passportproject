@@ -62,23 +62,38 @@ public class ExcelUtil {
 
 	}
 
-	public  void insertGenerateFormNumber(String Applicaitonnumber) throws Exception {
+	public  void insertGenerateFormNumber(String Applicaitonnumber, String TestDataID) throws Exception {
+		String updateStatus = null;
+		String updateStatusDynamicID = null;
 
-		String update_Status = null;
 		String applicaitonnumber = null;
 		String updateapplicationnumber=null;
+		String updateapplicationnumberDynamicID = null;
+		
+		String testdataid = TestDataID;
+		System.out.println(testdataid);
+		
+		
+		updateStatus=String.format("Update %s set USED_STATUS='Yes' where TestDataID='number'",Sheetname);
+		updateStatusDynamicID=updateStatus.replace("number",testdataid);
+		
+		System.out.println("Status update query is "+updateStatusDynamicID);
+		
 		//update_status = String.format("Update %s set (USED_STATUS,FormNumber)Values('Yes','Applicationnumber') where TestDataID='2'",Sheetname);
-		update_Status = String.format("Update %s set USED_STATUS='Yes' where TestDataID='2'",Sheetname);
-		applicaitonnumber=String.format("Update %s set FormNumber='Appnumber' where TestDataID='2'",Sheetname);
-		updateapplicationnumber=applicaitonnumber.replace("Appnumber", Applicaitonnumber);
+		//update_Status = String.format("Update %s set USED_STATUS='Yes' where TestDataID='2'",Sheetname);
+		
+		applicaitonnumber=String.format("Update %s set FormNumber='Appnumber' where TestDataID='number'",Sheetname);
+		updateapplicationnumber= applicaitonnumber.replace("Appnumber", Applicaitonnumber);
+		updateapplicationnumberDynamicID= updateapplicationnumber.replace("number",testdataid);
+		System.out.println("Application number update query is "+updateapplicationnumberDynamicID);
 		Fillo fillo = new Fillo();
 		Connection conn = null;
 		int recordset = 0;
 
 		try {
 			conn = fillo.getConnection(FILEPATH);
-			recordset = conn.executeUpdate(	update_Status);
-			recordset = conn.executeUpdate(	updateapplicationnumber);
+			recordset = conn.executeUpdate(updateStatusDynamicID);
+			recordset = conn.executeUpdate(updateapplicationnumberDynamicID);
 
 		} catch (FilloException e) {
 			e.printStackTrace();
